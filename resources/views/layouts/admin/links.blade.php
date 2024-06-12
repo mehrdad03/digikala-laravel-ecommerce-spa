@@ -25,3 +25,13 @@
 <link href="/admin/src/assets/css/dark/components/list-group.css" rel="stylesheet" type="text/css">
 <link href="/admin/src/assets/css/dark/dashboard/dash_2.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+<!--  BEGIN CUSTOM STYLE FILE  -->
+<link rel="stylesheet" type="text/css" href="/admin/src/assets/css/light/elements/alert.css">
+<link rel="stylesheet" type="text/css" href="/admin/src/assets/css/dark/elements/alert.css">
+
+
+<link rel="stylesheet" href="/admin/src/plugins/src/sweetalerts2/sweetalerts2.css">
+<link href="/admin/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
+<link href="/admin/src/plugins/css/dark/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+

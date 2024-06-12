@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/admin',dashboardIndex::class)->name('admin.dashboard.index');
+Route::get('/admin/dashboard',dashboardIndex::class)->name('admin.dashboard.index');
 Route::get('/admin/country',countryIndex::class)->name('admin.country.index');
