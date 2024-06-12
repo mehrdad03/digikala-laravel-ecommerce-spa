@@ -2,6 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 <title>Sales Admin | CORK - Multipurpose Bootstrap Dashboard Template </title>
+
+<link rel="stylesheet" href="/fonts/WebFonts/css/fontiran.css">
+<link rel="stylesheet" href="/fonts/WebFonts/css/stylef.css">
+
 <link rel="icon" type="image/x-icon" href="/admin/src/assets/img/favicon.ico"/>
 <link href="/admin/layouts/vertical-dark-menu/css/light/loader.css" rel="stylesheet" type="text/css"/>
 <link href="/admin/layouts/vertical-dark-menu/css/dark/loader.css" rel="stylesheet" type="text/css"/>
