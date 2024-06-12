@@ -1,0 +1,29 @@
+/**
+*
+* ========================================================================================
+*
+*   @CUSTOM STYLESHEET - This stylesheet should be used for custom customization 
+*
+* ========================================================================================
+*
+*/
+/* ScrollBar Position */
+#sidebar .ps__rail-y {
+  right: 0 !important;
+}
+
+/* c-custom-dropdown */
+.c-custom-dropdown button {
+  background: none;
+  border: none;
+  padding: 0 5px;
+}
+
+/* gcontainer */
+.glightbox-container .gcontainer .gnext.gbtn {
+  transform: rotate(180deg);
+}
+.glightbox-container .gcontainer .gprev.gbtn {
+  transform: rotate(180deg);
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImN1c3RvbS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQVVBO0FBRUk7RUFDSTs7O0FBSVI7QUFJSTtFQUNJO0VBQ0E7RUFDQTs7O0FBSVI7QUFLWTtFQUNJOztBQUlKO0VBQ0kiLCJmaWxlIjoiY3VzdG9tLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxyXG4qXHJcbiogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxyXG4qXHJcbiogICBAQ1VTVE9NIFNUWUxFU0hFRVQgLSBUaGlzIHN0eWxlc2hlZXQgc2hvdWxkIGJlIHVzZWQgZm9yIGN1c3RvbSBjdXN0b21pemF0aW9uIFxyXG4qXHJcbiogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxyXG4qXHJcbiovXHJcblxyXG4vKiBTY3JvbGxCYXIgUG9zaXRpb24gKi9cclxuI3NpZGViYXIge1xyXG4gICAgLnBzX19yYWlsLXkge1xyXG4gICAgICAgIHJpZ2h0OiAwIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuLyogYy1jdXN0b20tZHJvcGRvd24gKi9cclxuXHJcbi5jLWN1c3RvbS1kcm9wZG93biB7XHJcblxyXG4gICAgYnV0dG9uIHtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgICAgIGJvcmRlcjogbm9uZTtcclxuICAgICAgICBwYWRkaW5nOiAwIDVweDtcclxuICAgIH1cclxufVxyXG5cclxuLyogZ2NvbnRhaW5lciAqL1xyXG5cclxuLmdsaWdodGJveC1jb250YWluZXIge1xyXG4gICAgLmdjb250YWluZXIge1xyXG4gICAgICAgIC5nbmV4dCB7XHJcbiAgICAgICAgICAgICYuZ2J0biB7XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5ncHJldiB7XHJcbiAgICAgICAgICAgICYuZ2J0biB7XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcblxyXG5cclxuXHJcblxyXG4iXX0= */
