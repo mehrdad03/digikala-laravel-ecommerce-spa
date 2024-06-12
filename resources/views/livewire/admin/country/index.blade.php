@@ -83,7 +83,7 @@
                                 <td class="text-center">
                                     <div class="action-btns">
 
-                                        <a href="javascript:void(0);" class="action-btn btn-edit bs-tooltip me-2"
+                                        <a href="javascript:void(0);" wire:click="edit({{$country->id}})" class="action-btn btn-edit bs-tooltip me-2"
                                            data-toggle="tooltip" data-placement="top" title=""
                                            data-bs-original-title="Edit">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

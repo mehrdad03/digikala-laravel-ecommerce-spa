@@ -10,6 +10,7 @@ class Index extends Component
 {
 
     public $name;
+    public $countryId;
 
     public function submit($formData, Country $country)
     {
@@ -22,11 +23,23 @@ class Index extends Component
         ]);
 
         $validator->validate();
-        $country->submit($formData);
+        $country->submit($formData,$this->countryId);
         $this->reset();
-        $this->dispatch('success','عملیات با موفقیت انجام شد!');
+        $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
 
     }
+
+    public function edit($country_id)
+    {
+        $country = Country::query()->where('id', $country_id)->first();
+
+        if ($country) {
+            $this->name = $country->name;
+            $this->countryId = $country->id;
+        }
+
+    }
+
 
     public function render()
     {
