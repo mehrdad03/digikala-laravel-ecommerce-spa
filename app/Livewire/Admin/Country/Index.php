@@ -25,6 +25,7 @@ class Index extends Component
         ]);
 
         $validator->validate();
+        $this->resetValidation();
         $country->submit($formData, $this->countryId);
         $this->reset();
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
