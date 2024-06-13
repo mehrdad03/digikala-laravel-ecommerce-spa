@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <div class="col-sm-12">
                         <label for="country" class="form-label">کشور</label>
-                        <select id="country" class="form-control" name="countryId" placeholder="انتخاب کشور" autocomplete="off" wire:ignore>
+                        <select id="country" class="form-control" name="countryId" wire:model="countryId" placeholder="انتخاب کشور" autocomplete="off" wire:ignore>
                             @foreach($countries as $country)
                                 <option value="{{$country->id}}">{{$country->name}}</option>
                             @endforeach

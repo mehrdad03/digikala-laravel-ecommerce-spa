@@ -12,8 +12,10 @@ class Index extends Component
 {
     use WithPagination;
 
+    public $name;
     public $countries = [];
     public $stateId ;
+    public $countryId ;
 
     public function mount()
     {
@@ -41,7 +43,28 @@ class Index extends Component
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
 
     }
+    public function edit($state_id)
+    {
 
+        $state = State::query()->where('id', $state_id)->first();
+
+        if ($state) {
+            $this->name = $state->name;
+            $this->stateId = $state->id;
+            $this->countryId = $state->country_id;
+        }
+
+    }
+
+
+    public function delete($country_id)
+    {
+
+        Country::query()->where('id', $country_id)->delete();
+        $this->dispatch('success', 'عملیات حذف با موفقیت انجام شد!');
+
+
+    }
 
     public function render()
     {
