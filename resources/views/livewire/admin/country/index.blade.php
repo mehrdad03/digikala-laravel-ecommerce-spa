@@ -1,4 +1,5 @@
 <div class="row">
+
     {{--form--}}
     <div class="col-md-4">
 
@@ -23,7 +24,7 @@
                     </div>
 
                     @error('name')
-                    <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert">
+                    <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert" wire:loading.remove>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                             <svg> ...</svg>
                         </button>
@@ -33,7 +34,9 @@
 
 
                     <button type="submit" class="btn btn-primary _effect--ripple waves-effect waves-light">
-                        ثبت
+                        <span  wire:loading.remove> ثبت</span>
+                        <div class="spinner-border text-white me-2 align-self-center loader-sm " wire:loading></div>
+
                     </button>
                 </form>
 
@@ -70,7 +73,7 @@
 
                             <tr>
                                 <td>
-                                    {{$loop->index +1}}
+                                    {{$loop->iteration + $countries->firstItem() - 1}}
                                 </td>
                                 <td>
                                     <div class="media">
@@ -121,8 +124,8 @@
 
                         </tbody>
                     </table>
+                    {{$countries->links('layouts.admin.pagination')}}
                 </div>
-                {{$countries->links('layouts.admin.pagination')}}
 
             </div>
         </div>
