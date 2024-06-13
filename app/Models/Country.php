@@ -16,7 +16,7 @@ class Country extends Model
 
         Country::query()->updateOrCreate(
             [
-                'id'=>$countryId
+                'id' => $countryId
             ]
             ,
             [
