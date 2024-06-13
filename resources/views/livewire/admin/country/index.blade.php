@@ -18,13 +18,16 @@
                     <div class="row mb-4">
                         <div class="col-sm-12">
                             <label for="name" class="form-label">نام کشور</label>
-                            <input type="text" class="form-control" id="name" wire:model="name" name="name" placeholder="">
+                            <input type="text" class="form-control" id="name" wire:model="name" name="name"
+                                   placeholder="">
                         </div>
                     </div>
 
                     @error('name')
                     <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><svg> ... </svg></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <svg> ...</svg>
+                        </button>
                         <strong>خطا !</strong> {{$message}}.</button>
                     </div>
                     @enderror
@@ -68,7 +71,7 @@
 
                             <tr>
                                 <td>
-                                   {{$loop->index +1}}
+                                    {{$loop->index +1}}
                                 </td>
                                 <td>
                                     <div class="media">
@@ -81,19 +84,22 @@
                                 <td class="text-center">
                                     <div class="action-btns">
 
-                                        <a href="javascript:void(0);"  wire:click="edit({{$country->id}})" class="action-btn btn-edit bs-tooltip me-2"
+                                        <a href="javascript:void(0);" wire:click="edit({{$country->id}})"
+                                           class="action-btn btn-edit bs-tooltip me-2"
                                            data-toggle="tooltip" data-placement="top" title=""
                                            data-bs-original-title="Edit">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                  stroke-linecap="round" stroke-linejoin="round"
                                                  class="feather feather-edit-2">
-                                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                                <path
+                                                    d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                                             </svg>
                                         </a>
                                         <a href="javascript:void(0);"
                                            wire:confirm="آیا مطمئن هستید؟"
-                                           wire:click="delete({{$country->id}})" class="action-btn btn-delete bs-tooltip"
+                                           wire:click="delete({{$country->id}})"
+                                           class="action-btn btn-delete bs-tooltip"
                                            data-toggle="tooltip" data-placement="top" title=""
                                            data-bs-original-title="Delete">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
