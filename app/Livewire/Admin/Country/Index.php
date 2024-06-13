@@ -5,9 +5,11 @@ namespace App\Livewire\Admin\Country;
 use App\Models\Country;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
 
     public $name;
     public $countryId;
@@ -23,7 +25,7 @@ class Index extends Component
         ]);
 
         $validator->validate();
-        $country->submit($formData,$this->countryId);
+        $country->submit($formData, $this->countryId);
         $this->reset();
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
 
@@ -44,7 +46,7 @@ class Index extends Component
     public function delete($country_id)
     {
 
-        Country::query()->where('id',$country_id)->delete();
+        Country::query()->where('id', $country_id)->delete();
         $this->dispatch('success', 'عملیات حذف با موفقیت انجام شد!');
 
 
@@ -53,7 +55,7 @@ class Index extends Component
 
     public function render()
     {
-        $countries = Country::all();
+        $countries = Country::query()->paginate(10);
         return view('livewire.admin.country.index', [
             'countries' => $countries
         ])->layout('layouts.admin.app');

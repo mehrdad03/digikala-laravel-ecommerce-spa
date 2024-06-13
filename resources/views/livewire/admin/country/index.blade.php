@@ -1,5 +1,4 @@
 <div class="row">
-
     {{--form--}}
     <div class="col-md-4">
 
@@ -123,6 +122,8 @@
                         </tbody>
                     </table>
                 </div>
+                {{$countries->links('layouts.admin.pagination')}}
+
             </div>
         </div>
 
