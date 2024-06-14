@@ -23,11 +23,11 @@
                     </thead>
                     <tbody>
 
-                    @foreach($categories as $category)
+                    @foreach($allCategories as $category)
 
                         <tr>
                             <td>
-                                {{$loop->iteration + $categories->firstItem() - 1}}
+                                {{$loop->iteration + $allCategories->firstItem() - 1}}
                             </td>
                             <td>
                                 <div class="media">
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{$category->state->name}}</td>
+                            <td>{{@$category->parent->name}}</td>
                             <td class="text-center">
                                 <div class="action-btns">
 
@@ -79,7 +79,7 @@
 
                     </tbody>
                 </table>
-                {{$categories->links('layouts.admin.pagination')}}
+                {{$allCategories->links('layouts.admin.pagination')}}
             </div>
 
         </div>
