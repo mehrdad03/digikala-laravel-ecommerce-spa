@@ -65,134 +65,18 @@
                     <span>APPLICATIONS</span></div>
             </li>
             <li class="menu">
-                <a href="#apps" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.category.index')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" class="feather feather-cpu">
-                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                            <rect x="9" y="9" width="6" height="6"></rect>
-                            <line x1="9" y1="1" x2="9" y2="4"></line>
-                            <line x1="15" y1="1" x2="15" y2="4"></line>
-                            <line x1="9" y1="20" x2="9" y2="23"></line>
-                            <line x1="15" y1="20" x2="15" y2="23"></line>
-                            <line x1="20" y1="9" x2="23" y2="9"></line>
-                            <line x1="20" y1="14" x2="23" y2="14"></line>
-                            <line x1="1" y1="9" x2="4" y2="9"></line>
-                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                             stroke-linejoin="round" class="feather feather-map">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                            <line x1="8" y1="2" x2="8" y2="18"></line>
+                            <line x1="16" y1="6" x2="16" y2="22"></line>
                         </svg>
-                        <span>دسته بندی</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
+                        <span>دسته بندی ها</span>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled" id="apps" data-bs-parent="#accordionExample">
-                    <li>
-                        <a href="./app-calendar.html"> Calendar </a>
-                    </li>
-                    <li>
-                        <a href="./app-chat.html"> Chat </a>
-                    </li>
-                    <li>
-                        <a href="./app-mailbox.html"> Mailbox </a>
-                    </li>
-                    <li>
-                        <a href="./app-todoList.html"> Todo List </a>
-                    </li>
-                    <li>
-                        <a href="./app-notes.html"> Notes </a>
-                    </li>
-                    <li>
-                        <a href="./app-scrumboard.html"> Scrumboard </a>
-                    </li>
-                    <li>
-                        <a href="./app-contacts.html"> Contacts </a>
-                    </li>
-                    <li>
-                        <a href="#invoice" data-bs-toggle="collapse" aria-expanded="false"
-                           class="dropdown-toggle collapsed">Invoice
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </a>
-                        <ul class="collapse list-unstyled sub-submenu" id="invoice" data-bs-parent="#apps">
-                            <li>
-                                <a href="./app-invoice-list.html"> List </a>
-                            </li>
-                            <li>
-                                <a href="./app-invoice-preview.html"> Preview </a>
-                            </li>
-                            <li>
-                                <a href="./app-invoice-add.html"> Add </a>
-                            </li>
-                            <li>
-                                <a href="./app-invoice-edit.html"> Edit </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#ecommerce" data-bs-toggle="collapse" aria-expanded="false"
-                           class="dropdown-toggle collapsed">Ecommerce
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </a>
-                        <ul class="collapse list-unstyled sub-submenu" id="ecommerce" data-bs-parent="#apps">
-                            <li>
-                                <a href="./app-ecommerce-product-shop.html"> Shop </a>
-                            </li>
-                            <li>
-                                <a href="./app-ecommerce-product.html"> Product </a>
-                            </li>
-                            <li>
-                                <a href="./app-ecommerce-product-list.html"> List </a>
-                            </li>
-                            <li>
-                                <a href="./app-ecommerce-product-add.html"> Create </a>
-                            </li>
-                            <li>
-                                <a href="./app-ecommerce-product-edit.html"> Edit </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#blog" data-bs-toggle="collapse" aria-expanded="false"
-                           class="dropdown-toggle collapsed">Blog
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </a>
-                        <ul class="collapse list-unstyled sub-submenu" id="blog" data-bs-parent="#apps">
-                            <li>
-                                <a href="./app-blog-grid.html"> Grid </a>
-                            </li>
-                            <li>
-                                <a href="./app-blog-list.html"> List </a>
-                            </li>
-                            <li>
-                                <a href="./app-blog-post.html"> Post </a>
-                            </li>
-                            <li>
-                                <a href="./app-blog-create.html"> Create </a>
-                            </li>
-                            <li>
-                                <a href="./app-blog-edit.html"> Edit </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
             </li>
 
             <li class="menu menu-heading">
