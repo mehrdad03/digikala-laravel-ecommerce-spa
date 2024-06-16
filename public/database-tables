@@ -3,7 +3,8 @@ admins
 sellers
 categories
 products
-category_attributes
+category_features
+category_features_values
 product_attribute_values
 countries
 states
