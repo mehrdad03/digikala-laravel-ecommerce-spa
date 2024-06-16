@@ -33,12 +33,12 @@
                                 <div class="media">
 
                                     <div class="media-body align-self-center">
-                                        <h6 class="mb-0">{{$category->name}}</h6>
+                                        <h6 class="mb-0">{{$feature->name}}</h6>
                                     </div>
                                 </div>
                             </td>
                             <td class="text-center">
-                                <a href="{{route('admin.category.features',$feature->id)}}" class="btn btn-outline-info">ویژگی</a>
+                                <a href="{{route('admin.category.features',$feature->id)}}" class="btn btn-outline-info">مقادیر</a>
                             </td>
                             <td class="text-center">
                                 <div class="action-btns">

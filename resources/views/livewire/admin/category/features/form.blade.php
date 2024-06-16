@@ -5,7 +5,8 @@
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>
-                        ویژگی دسته بندی فلان
+                        ویژگی دسته بندی
+                       <span wire:ignore> {{$categoryName}}</span>
                     </h4>
                 </div>
             </div>
