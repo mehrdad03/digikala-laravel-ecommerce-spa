@@ -56,6 +56,23 @@ class Index extends Component
         }
 
     }
+
+    public function delete($categoryId)
+    {
+
+        $category = Category::query()->where('id', $categoryId)->first();
+
+        if ($category->children()->exists()){
+            $this->dispatch('error','این دسته‌بندی دارای زیرشاخه است و نمی‌توان آن را حذف کرد!');
+            return;
+        }
+
+       $category->delete();
+        $this->dispatch('success', 'عملیات حذف با موفقیت انجام شد!');
+
+
+    }
+
     public function render()
     {
 

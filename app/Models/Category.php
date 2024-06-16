@@ -17,6 +17,12 @@ class Category extends Model
 
     }
 
+    public function children()
+    {
+        return $this->hasMany(Category::class,'category_id','id');
+
+    }
+
     public function submit($formData, $categoryId)
     {
         if ($formData['parentId']==""){

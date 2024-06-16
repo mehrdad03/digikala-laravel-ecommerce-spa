@@ -21,4 +21,14 @@
            timer: 1500
        })
     })
+
+   window.addEventListener('error', function(event) {
+       Swal.fire({
+           position: 'center',
+           icon: 'error',
+           title: event.detail,
+           showConfirmButton: false,
+           timer: 3000
+       })
+   })
 </script>
