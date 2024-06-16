@@ -31,7 +31,7 @@
                 <div class="row mb-4">
                     <div class="col-sm-12">
                         <label for="country" class="form-label">دسته بندی والد</label>
-                        <select id="country" class="form-control" name="categoryId" wire:model="categoryId" placeholder="انتخاب کشور" autocomplete="off" wire:ignore>
+                        <select id="country" class="form-control" name="parentId" wire:model="parentId" placeholder="انتخاب کشور" autocomplete="off" wire:ignore>
                             <option value="">دسته بندی والد</option>
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>

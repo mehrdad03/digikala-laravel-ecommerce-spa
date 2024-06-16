@@ -13,7 +13,24 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,'category_id','id');
 
+    }
+
+    public function submit($formData, $categoryId)
+    {
+        if ($formData['parentId']==""){
+            $formData['parentId']=null;
+        }
+        Category::query()->updateOrCreate(
+            [
+                'id'=>$categoryId
+            ],
+            [
+                'name'=>$formData['name'],
+                'category_id'=>$formData['parentId'],
+
+            ]
+        );
     }
 }
