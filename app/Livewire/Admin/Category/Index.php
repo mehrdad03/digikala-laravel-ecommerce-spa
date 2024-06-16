@@ -14,6 +14,7 @@ class Index extends Component
     public $categories = [];
     public $name;
     public $categoryId;
+    public $parentId;
     public function mount()
     {
         $this->categories = Category::all();
@@ -39,6 +40,20 @@ class Index extends Component
         $category->submit($formData, $this->categoryId);
         $this->reset();
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
+
+    }
+
+
+    public function edit($categoryId)
+    {
+
+        $category = Category::query()->where('id', $categoryId)->first();
+
+        if ($category) {
+            $this->name = $category->name;
+            $this->categoryId = $category->id;
+            $this->parentId = $category->category_id;
+        }
 
     }
     public function render()
