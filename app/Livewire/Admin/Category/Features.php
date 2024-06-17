@@ -23,8 +23,6 @@ class Features extends Component
         $this->categoryName=$category->name;
 
         $this->categoryId=$category->id;
-
-
     }
 
     public function submit($formData,CategoryFeature $categoryFeature)
@@ -79,7 +77,9 @@ class Features extends Component
     public function render()
     {
 
-        $categoryFeatures = CategoryFeature::query()->paginate(10);
+        $categoryFeatures = CategoryFeature::query()
+            ->where('category_id',$this->categoryId)
+            ->paginate(10);
 
         return view('livewire.admin.category.features.index', [
             'categoryFeatures' => $categoryFeatures
