@@ -17,8 +17,8 @@
 
                 <div class="row mb-4">
                     <div class="col-sm-12">
-                        <label for="name" class="form-label">نام مقادیر</label>
-                        <input type="text" class="form-control" id="name" wire:model="name" name="name"
+                        <label for="value" class="form-label">نام مقادیر</label>
+                        <input type="text" class="form-control" id="value" wire:model="value" name="value"
                                placeholder="">
                     </div>
                 </div>

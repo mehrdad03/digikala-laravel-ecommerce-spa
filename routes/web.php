@@ -16,4 +16,4 @@ Route::get('/admin/state', stateIndex::class)->name('admin.state.index');
 Route::get('/admin/city', cityIndex::class)->name('admin.city.index');
 Route::get('/admin/category', categoryIndex::class)->name('admin.category.index');
 Route::get('/admin/category/{category}/features', Features::class)->name('admin.category.features');
-Route::get('/admin/category/features/{feature}/values', FeatureValue::class)->name('admin.category.features.values');
+Route::get('/admin/category/features/{categoryFeature}/values', FeatureValue::class)->name('admin.category.features.values');

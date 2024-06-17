@@ -31,7 +31,7 @@
                                 <div class="media">
 
                                     <div class="media-body align-self-center">
-                                        <h6 class="mb-0">{{$value->name}}</h6>
+                                        <h6 class="mb-0">{{$value->value}}</h6>
                                     </div>
                                 </div>
                             </td>
