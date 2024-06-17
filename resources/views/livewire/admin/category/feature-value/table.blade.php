@@ -4,7 +4,7 @@
         <div class="widget-header">
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                    <h4>لیست ویژگی ها</h4>
+                    <h4>لیست مقادیر ها</h4>
                 </div>
             </div>
         </div>
@@ -15,35 +15,31 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">اسم ویژگی</th>
-                        <th class="text-center" scope="col">مقادیر</th>
-
+                        <th scope="col">اسم مقادیر</th>
                         <th class="text-center" scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
 
-                    @foreach($categoryFeatures as $feature)
+                    @foreach($featureValues as $value)
 
                         <tr>
                             <td>
-                                {{$loop->iteration + $categoryFeatures->firstItem() - 1}}
+                                {{$loop->iteration + $featureValues->firstItem() - 1}}
                             </td>
                             <td>
                                 <div class="media">
 
                                     <div class="media-body align-self-center">
-                                        <h6 class="mb-0">{{$feature->name}}</h6>
+                                        <h6 class="mb-0">{{$value->name}}</h6>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center">
-                                <a href="{{route('admin.category.features.values',$feature->id)}}" class="btn btn-outline-info">مقادیر</a>
-                            </td>
+
                             <td class="text-center">
                                 <div class="action-btns">
 
-                                    <a href="javascript:void(0);" wire:click="edit({{$feature->id}})"
+                                    <a href="javascript:void(0);" wire:click="edit({{$value->id}})"
                                        class="action-btn btn-edit bs-tooltip me-2"
                                        data-toggle="tooltip" data-placement="top" title=""
                                        data-bs-original-title="Edit">
@@ -57,7 +53,7 @@
                                     </a>
                                     <a href="javascript:void(0);"
                                        wire:confirm="آیا مطمئن هستید؟"
-                                       wire:click="delete({{$feature->id}})"
+                                       wire:click="delete({{$value->id}})"
                                        class="action-btn btn-delete bs-tooltip"
                                        data-toggle="tooltip" data-placement="top" title=""
                                        data-bs-original-title="Delete">
@@ -81,7 +77,7 @@
 
                     </tbody>
                 </table>
-                {{$categoryFeatures->links('layouts.admin.pagination')}}
+                {{$featureValues->links('layouts.admin.pagination')}}
             </div>
 
         </div>
