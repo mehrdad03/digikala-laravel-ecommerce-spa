@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
+
 
 class Product extends Model
 {
@@ -11,19 +15,21 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function submit($formData, $productId)
+    public function submit($formData, $productId, $photos)
     {
+        DB::transaction(function () use ($formData, $productId, $photos) {
 
-        $product=$this->submitToProduct($formData,$productId);
-        $this->submitToSeoItem($formData,$product->id);
+            $product = $this->submitToProduct($formData, $productId);
+            $this->submitToSeoItem($formData, $product->id);
+            $this->submitToProductImage($photos, $product->id);
+            $this->saveImages($photos, $product->id);
 
-
-
+        });
 
 
     }
 
-    public function submitToProduct($formData,$productId)
+    public function submitToProduct($formData, $productId)
     {
         return Product::query()->updateOrCreate(
 
@@ -44,12 +50,12 @@ class Product extends Model
 
     }
 
-    public function submitToSeoItem($formData,$productId)
+    public function submitToSeoItem($formData, $productId)
     {
         SeoItem::query()->updateOrCreate(
             [
-                'type'=>'product',
-                'ref_id'=>$productId
+                'type' => 'product',
+                'ref_id' => $productId
 
             ],
             [
@@ -59,5 +65,51 @@ class Product extends Model
             ]
         );
 
+    }
+
+    public function submitToProductImage($photos, $productId)
+    {
+        foreach ($photos as $photo) {
+
+            $path = pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp';
+
+            ProductImage::query()->create(
+                [
+                    'path' => $path,
+                    'product_id' => $productId,
+                ]
+            );
+        }
+
+    }
+
+    public function saveImages($photos, $productId)
+    {
+        foreach ($photos as $photo) {
+            $this->resizeImage($photo, $productId, 100, 100, 'small');
+            $this->resizeImage($photo, $productId, 300, 300, 'medium');
+            $this->resizeImage($photo, $productId, 800, 800, 'large');
+
+            $photo->delete();
+
+        }
+
+
+    }
+
+    public function resizeImage($photo, $productId, $width, $height, $folder)
+    {
+        $path = public_path('products/' . $productId . '/' . $folder);
+
+        if (!file_exists($path)) {
+            mkdir($path, 0755, true);
+        }
+
+        $manager = new ImageManager(new Driver());
+
+        $manager->read($photo->getRealPath())
+            ->scale($width, $height)
+            ->toWebp()
+            ->save($path . '/' . pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp');
     }
 }
