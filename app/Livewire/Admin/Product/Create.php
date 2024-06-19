@@ -48,6 +48,10 @@ class Create extends Component
         } else {
             $formData['featured'] = false;
         }
+
+        if ($formData['discount_duration']==""){
+            $formData['discount_duration']=null;
+        }
         $formData['photos'] = $this->photos;
 
         //insert index of cover image into the formData for validation
