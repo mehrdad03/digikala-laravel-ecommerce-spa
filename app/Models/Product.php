@@ -15,17 +15,17 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function submit($formData, $productId, $photos)
+    public function submit($formData, $productId, $photos, $coverIndex)
     {
-        DB::transaction(function () use ($formData, $productId, $photos) {
+
+        DB::transaction(function () use ($formData, $productId, $photos, $coverIndex) {
 
             $product = $this->submitToProduct($formData, $productId);
             $this->submitToSeoItem($formData, $product->id);
-            $this->submitToProductImage($photos, $product->id);
+            $this->submitToProductImage($photos, $product->id, $coverIndex);
             $this->saveImages($photos, $product->id);
 
         });
-
 
     }
 
@@ -67,9 +67,9 @@ class Product extends Model
 
     }
 
-    public function submitToProductImage($photos, $productId)
+    public function submitToProductImage($photos, $productId, $coverIndex)
     {
-        foreach ($photos as $photo) {
+        foreach ($photos as $index => $photo) {
 
             $path = pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp';
 
@@ -77,6 +77,7 @@ class Product extends Model
                 [
                     'path' => $path,
                     'product_id' => $productId,
+                    'is_cover' => $index==$coverIndex,
                 ]
             );
         }
