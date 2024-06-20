@@ -5,6 +5,7 @@ use App\Livewire\Admin\Category\FeatureValue;
 use App\Livewire\Admin\Dashboard\Index as dashboardIndex;
 use App\Livewire\Admin\Country\Index as countryIndex;
 use App\Livewire\Admin\Product\Create;
+use App\Livewire\Admin\Product\Index as productIndex;
 use App\Livewire\Admin\State\Index as stateIndex;
 use App\Livewire\Admin\City\Index as cityIndex;
 use App\Livewire\Admin\Category\Index as categoryIndex;
@@ -20,4 +21,5 @@ Route::get('/admin/category/{category}/features', Features::class)->name('admin.
 Route::get('/admin/category/features/{categoryFeature}/values', FeatureValue::class)->name('admin.category.features.values');
 
 
+Route::get('/admin/product/index', productIndex::class)->name('admin.product.index');
 Route::get('/admin/product/create', Create::class)->name('admin.product.create');

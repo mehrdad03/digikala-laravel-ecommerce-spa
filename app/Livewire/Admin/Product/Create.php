@@ -52,6 +52,12 @@ class Create extends Component
         if ($formData['discount_duration']==""){
             $formData['discount_duration']=null;
         }
+
+        if (!isset($formData['selleId'])) {
+            $formData['sellerId'] = null;
+        }
+
+
         $formData['photos'] = $this->photos;
 
         //insert index of cover image into the formData for validation
@@ -90,7 +96,9 @@ class Create extends Component
         $this->resetValidation();
         $product->submit($formData, $this->productId, $this->photos, $this->coverIndex);
         $this->reset();
-        $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
+        $this->redirect(route('admin.product.index'));
+        session()->flash('success', 'محصول با موفقیت افزود شد!');
+
 
     }
 
