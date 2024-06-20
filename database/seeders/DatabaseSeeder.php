@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CountrySeeder::class,
             StateSeeder::class,
+            CategoriesTableSeeder::class,
+            ProductsTableSeeder::class,
+            SeoItemsTableSeeder::class,
+            ProductImagesTableSeeder::class
         ]);
     }
 }
