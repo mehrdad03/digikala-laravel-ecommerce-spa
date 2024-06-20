@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('path');
             $table->boolean('is_cover')->default(false);
-            $table->foreignId('product_id')->constrained();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
