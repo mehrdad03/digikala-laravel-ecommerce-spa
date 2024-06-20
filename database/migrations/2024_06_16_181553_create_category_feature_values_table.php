@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_feature_id')->constrained();
             $table->string('value');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

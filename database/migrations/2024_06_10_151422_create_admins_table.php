@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('mobile')->unique();
             $table->string('password');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('meta_description');
             $table->string('type');
             $table->foreignId('ref_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

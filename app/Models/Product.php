@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
@@ -13,7 +15,7 @@ use function Symfony\Component\Translation\t;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
@@ -46,7 +48,7 @@ class Product extends Model
                 'discount_duration' => $formData['discount_duration'],
                 'seller_id' => $formData['sellerId'],
                 'category_id' => $formData['categoryId'],
-                'p_code' =>config('app.name').'-'.$this->generateProductCode(),
+                'p_code' => config('app.name') . '-' . $this->generateProductCode(),
 
             ]
         );
@@ -139,5 +141,15 @@ class Product extends Model
     {
         return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
 
+    }
+
+    public function removeProduct(Product $product)
+    {
+        DB::transaction(function () use ($product) {
+            $product->delete();
+            ProductImage::query()->where('product_id', $product->id)->delete();
+            SeoItem::query()->where('ref_id', $product->id)->delete();
+            File::deleteDirectory('products/' . $product->id);
+        });
     }
 }

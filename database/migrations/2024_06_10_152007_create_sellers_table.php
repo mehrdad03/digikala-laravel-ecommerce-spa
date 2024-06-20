@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('phone');
             $table->text('description')->nullable();
             $table->string('address');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
