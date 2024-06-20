@@ -16,10 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CountrySeeder::class,
             StateSeeder::class,
-            CategoriesTableSeeder::class,
-            ProductsTableSeeder::class,
-            SeoItemsTableSeeder::class,
-            ProductImagesTableSeeder::class
         ]);
+
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(SeoItemsTableSeeder::class);
+        $this->call(ProductImagesTableSeeder::class);
     }
 }

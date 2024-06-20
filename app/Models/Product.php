@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
+use function Symfony\Component\Translation\t;
 
 
 class Product extends Model
@@ -44,6 +46,7 @@ class Product extends Model
                 'discount_duration' => $formData['discount_duration'],
                 'seller_id' => $formData['sellerId'],
                 'category_id' => $formData['categoryId'],
+                'p_code' =>config('app.name').'-'.$this->generateProductCode(),
 
             ]
         );
@@ -77,7 +80,7 @@ class Product extends Model
                 [
                     'path' => $path,
                     'product_id' => $productId,
-                    'is_cover' => $index==$coverIndex,
+                    'is_cover' => $index == $coverIndex,
                 ]
             );
         }
@@ -114,6 +117,18 @@ class Product extends Model
             ->save($path . '/' . pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp');
     }
 
+    public function generateProductCode()
+    {
+        do {
+            $randomCode = rand(1000, 100000000);
+            $checkCode = Product::query()->where('p_code', $randomCode)->first();
+
+        } while ($checkCode);
+
+        return $randomCode;
+
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -122,7 +137,7 @@ class Product extends Model
 
     public function coverImage()
     {
-        return $this->belongsTo(ProductImage::class,'id','product_id')->where('is_cover','=',true);
+        return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
 
     }
 }
