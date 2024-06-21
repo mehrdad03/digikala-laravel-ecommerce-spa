@@ -4,7 +4,9 @@ namespace App\Livewire\Admin\Product;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\Seller;
+use Faker\Core\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
@@ -28,9 +30,23 @@ class Create extends Component
 
     public $coverIndex = 0;
 
+    //edit
+    public $product;
+
 
     public function mount()
     {
+        if ($_GET and $_GET['p_id']) {
+            $this->productId = $_GET['p_id'];
+            $product = $this->product = Product::query()
+                ->with('seo', 'images')
+                ->where('id', $this->productId)->firstOrFail();
+            $this->name = $product->name;
+            $this->slug = $product->seo->slug;
+            @$this->coverIndex = $product->coverImage->id;
+        }
+
+
         $this->categories = Category::all();
         $this->sellers = Seller::query()->select('id', 'shop_name')->get();
     }
@@ -49,8 +65,8 @@ class Create extends Component
             $formData['featured'] = false;
         }
 
-        if ($formData['discount_duration']==""){
-            $formData['discount_duration']=null;
+        if ($formData['discount_duration'] == "") {
+            $formData['discount_duration'] = null;
         }
 
         if (!isset($formData['selleId'])) {
@@ -114,6 +130,32 @@ class Create extends Component
         array_splice($this->photos, $index, 1);
 
     }
+
+
+    //edit
+
+    public function removeOldPhoto(ProductImage $productImage, $productId)
+    {
+
+        $productImage->delete();
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/small/' . $productImage->path));
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/medium/' . $productImage->path));
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/large/' . $productImage->path));
+
+    }
+
+    public function setCoverOldImage($photoId)
+    {
+
+        ProductImage::query()->where('product_id', $this->productId)->update(['is_cover' => false]);
+        ProductImage::query()->where([
+            'product_id' => $this->productId,
+            'id' => $photoId,
+        ])->update(['is_cover' => true]);
+        $this->dispatch('success', 'تصویر کاور با موفقیت تغییر کرد!');
+
+    }
+
 
     public function render()
     {

@@ -74,7 +74,7 @@
                             <td class="text-center">
                                 <div class="action-btns">
 
-                                    <a href="javascript:void(0);" wire:click="edit({{$product->id}})"
+                                    <a href="{{route('admin.product.create')}}?p_id={{$product->id}}"
                                        class="action-btn btn-edit bs-tooltip me-2"
                                        data-toggle="tooltip" data-placement="top" title=""
                                        data-bs-original-title="Edit">

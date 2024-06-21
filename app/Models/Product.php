@@ -35,6 +35,7 @@ class Product extends Model
 
     public function submitToProduct($formData, $productId)
     {
+
         return Product::query()->updateOrCreate(
 
             [
@@ -45,6 +46,7 @@ class Product extends Model
                 'price' => $formData['price'],
                 'stock' => $formData['stock'],
                 'featured' => $formData['featured'],
+                'discount' => $formData['discount'],
                 'discount_duration' => $formData['discount_duration'],
                 'seller_id' => $formData['sellerId'],
                 'category_id' => $formData['categoryId'],
@@ -74,6 +76,8 @@ class Product extends Model
 
     public function submitToProductImage($photos, $productId, $coverIndex)
     {
+        ProductImage::query()->where('product_id',$productId)->update(['is_cover'=>false]);
+
         foreach ($photos as $index => $photo) {
 
             $path = pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp';
@@ -142,6 +146,16 @@ class Product extends Model
         return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
 
     }
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+
+    }
+    public function seo()
+    {
+        return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
+
+    }
 
     public function removeProduct(Product $product)
     {
@@ -152,4 +166,5 @@ class Product extends Model
             File::deleteDirectory('products/' . $product->id);
         });
     }
+
 }
