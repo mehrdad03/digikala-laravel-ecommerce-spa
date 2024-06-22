@@ -26,23 +26,23 @@ body.dark {
 
 body.dark {
   /*Page title*/
-  /* 
+  /*
   =====================
       Navigation Bar
   =====================
   */
   /* User Profile Dropdown*/
-  /* 
+  /*
   ===============
       Sidebar
   ===============
   */
-  /* 
+  /*
   ===============
       Sidebar
   ===============
   */
-  /*  
+  /*
       ======================
           Footer-wrapper
       ======================
@@ -234,7 +234,7 @@ body.dark .header-container .theme-brand {
   justify-content: space-between;
 }
 body.dark .header-container .theme-brand .theme-logo a img {
-  width: 34px;
+  /*width: 34px;*/
   height: 34px;
 }
 body.dark .header-container .theme-text {
@@ -1278,7 +1278,7 @@ body.dark.alt-menu #content {
   transition: none;
 }
 
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================

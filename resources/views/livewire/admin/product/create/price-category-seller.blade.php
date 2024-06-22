@@ -53,6 +53,7 @@
             <div class="col-xxl-12 col-md-6 mb-4">
                 <label for="sellers">فروشنده</label>
                 <select class="form-select" id="sellers" name="sellerId">
+                    <option value="">خود فروشگاه</option>
                     @foreach($sellers as $seller)
                         <option value="{{$seller->id}}" {{$seller->id==$product->seller_id ?'selected':''}}>{{$seller->shop_name}}</option>
                     @endforeach
