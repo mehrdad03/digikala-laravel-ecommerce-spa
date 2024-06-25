@@ -43,7 +43,8 @@
                         <th scope="col">نام محصول</th>
                         <th scope="col">دسته بندی</th>
                         <th scope="col">قیمت</th>
-                        <th scope="col">ویژگی ها</th>
+                        <th scope="col" class="text-center">ویژگی ها</th>
+                        <th scope="col" class="text-center">محتوای محصول</th>
 
                         <th class="text-center" scope="col"></th>
                     </tr>
@@ -74,6 +75,9 @@
                             <td>{{number_format($product->price)}}</td>
                             <td class="text-center">
                                 <a href="{{route('admin.product.features',$product->id)}}" class="btn btn-outline-info">ویژگی</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{route('admin.product.content',$product->id)}}" class="btn btn-outline-warning">محتوا</a>
                             </td>
                             <td class="text-center">
                                 <div class="action-btns">

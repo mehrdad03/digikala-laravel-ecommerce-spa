@@ -76,7 +76,7 @@ class Product extends Model
 
     public function submitToProductImage($photos, $productId, $coverIndex)
     {
-        ProductImage::query()->where('product_id',$productId)->update(['is_cover'=>false]);
+        ProductImage::query()->where('product_id', $productId)->update(['is_cover' => false]);
 
         foreach ($photos as $index => $photo) {
 
@@ -146,11 +146,13 @@ class Product extends Model
         return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
 
     }
+
     public function images()
     {
         return $this->hasMany(ProductImage::class);
 
     }
+
     public function seo()
     {
         return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
@@ -165,6 +167,14 @@ class Product extends Model
             SeoItem::query()->where('ref_id', $product->id)->delete();
             File::deleteDirectory('products/' . $product->id);
         });
+    }
+
+    public function submitProductContent($formData, $productId)
+    {
+        Product::query()->where('id', $productId)->update([
+            'short_description' => $formData['short_description'],
+            'long_description' => $formData['long_description'],
+        ]);
     }
 
 }
