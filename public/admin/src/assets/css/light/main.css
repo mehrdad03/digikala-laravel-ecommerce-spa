@@ -3069,7 +3069,7 @@ fieldset:disabled .btn {
 }
 
 /* .search-form-control { border-radius: .25rem; } */
-/*  
+/*
     ====================
         Table
     ====================
@@ -3124,7 +3124,7 @@ fieldset:disabled .btn {
   padding: 10px 21px 10px 21px;
   vertical-align: middle;
   letter-spacing: normal;
-  white-space: nowrap;
+max-width: 200px;
   font-weight: 400;
 }
 .table > :not(:first-child) {
@@ -3191,7 +3191,7 @@ fieldset:disabled .btn {
   border-bottom-left-radius: 10px;
 }
 
-/* 
+/*
     Hover and Striped
 */
 .table-striped.table-hover > tbody > tr:hover td {
@@ -3211,12 +3211,12 @@ fieldset:disabled .btn {
   border-bottom-left-radius: 10px;
 }
 
-/* 
+/*
 
     Striped
 
 */
-/* 
+/*
     Striped and Bordered
 */
 .table:not(.dataTable).table-bordered.table-striped > tbody > tr:nth-of-type(odd) td:first-child {
@@ -3275,12 +3275,12 @@ fieldset:disabled .btn {
   border-bottom-left-radius: 10px;
 }
 
-/* 
+/*
 
     Bordered
 
 */
-/* 
+/*
     Bordered and Hover
 */
 .statbox .widget-content:before, .statbox .widget-content:after {
@@ -3367,13 +3367,13 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
+/*
     ==========================
-        Background Colors  
+        Background Colors
     ==========================
 */
-/*  
-    Default  
+/*
+    Default
 */
 .bg-primary {
   background-color: #4361ee !important;
@@ -3417,8 +3417,8 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
-    Light Background  
+/*
+    Light Background
 */
 .bg-light-primary {
   background-color: #eceffe !important;
@@ -3462,7 +3462,7 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
+/*
     Progress Bar
 */
 .progress {
@@ -3551,7 +3551,7 @@ fieldset:disabled .btn {
   background-image: linear-gradient(to left, #2b5876 0%, #4e4376 100%);
 }
 
-/* 
+/*
     =====================
         BreadCrumbs
     =====================

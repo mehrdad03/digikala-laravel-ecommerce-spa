@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\Category\Features;
+use App\Livewire\Admin\Product\Features as productFeatures;
 use App\Livewire\Admin\Category\FeatureValue;
 use App\Livewire\Admin\Dashboard\Index as dashboardIndex;
 use App\Livewire\Admin\Country\Index as countryIndex;
@@ -19,7 +20,6 @@ Route::get('/admin/city', cityIndex::class)->name('admin.city.index');
 Route::get('/admin/category', categoryIndex::class)->name('admin.category.index');
 Route::get('/admin/category/{category}/features', Features::class)->name('admin.category.features');
 Route::get('/admin/category/features/{categoryFeature}/values', FeatureValue::class)->name('admin.category.features.values');
-
-
 Route::get('/admin/product/index', productIndex::class)->name('admin.product.index');
 Route::get('/admin/product/create', Create::class)->name('admin.product.create');
+Route::get('/admin/product/feature/{product}', productFeatures::class)->name('admin.product.features');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CategoryFeature extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
@@ -31,5 +31,11 @@ class CategoryFeature extends Model
 
             ]
         );
+    }
+
+    public function categoryFeatureValues()
+    {
+        return $this->hasMany(CategoryFeatureValue::class);
+
     }
 }
