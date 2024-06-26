@@ -57,6 +57,8 @@
             document.addEventListener('livewire:init', () => {
 
                 const editor=CKEDITOR.replace('long_description',{
+                    filebrowserUploadUrl: "{{route('admin.ck-upload', [$productId,'_token' => csrf_token() ])}}",
+                    filebrowserUploadMethod: 'form',
                     contentsLangDirection: 'rtl',
                     height: 500,
                 })
