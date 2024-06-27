@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Seller;
+use App\Repositories\ProductRepository;
+use App\Repositories\ProductRepositoryInterface;
 use Faker\Core\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -34,6 +36,13 @@ class Create extends Component
     public $product;
 
 
+    private $repository;
+
+    public function boot(ProductRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function mount()
     {
         if ($_GET and $_GET['p_id']) {
@@ -56,7 +65,7 @@ class Create extends Component
         $this->slug = Str::slug($this->name, '-', null);
     }
 
-    public function submit($formData, Product $product)
+    public function submit($formData)
     {
 
         if (isset($formData['featured'])) {
@@ -110,7 +119,7 @@ class Create extends Component
 
         $validator->validate();
         $this->resetValidation();
-        $product->submit($formData, $this->productId, $this->photos, $this->coverIndex);
+        $this->repository->submit($formData, $this->productId, $this->photos, $this->coverIndex);
         $this->redirect(route('admin.product.index'));
         session()->flash('success', 'محصول با موفقیت افزود شد!');
 
@@ -137,21 +146,13 @@ class Create extends Component
     public function removeOldPhoto(ProductImage $productImage, $productId)
     {
 
-        $productImage->delete();
-        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/small/' . $productImage->path));
-        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/medium/' . $productImage->path));
-        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/large/' . $productImage->path));
+        $this->repository->removeOldPhoto($productImage, $productId);
 
     }
 
     public function setCoverOldImage($photoId)
     {
-
-        ProductImage::query()->where('product_id', $this->productId)->update(['is_cover' => false]);
-        ProductImage::query()->where([
-            'product_id' => $this->productId,
-            'id' => $photoId,
-        ])->update(['is_cover' => true]);
+        $this->repository->setCoverOldImage($photoId,$this->productId);
         $this->dispatch('success', 'تصویر کاور با موفقیت تغییر کرد!');
 
     }
