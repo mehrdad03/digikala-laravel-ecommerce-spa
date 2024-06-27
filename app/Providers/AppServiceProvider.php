@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\ProductRepository;
-use App\Repositories\ProductRepositoryInterface;
+use App\Repositories\admin\AdminProductRepository;
+use App\Repositories\admin\AdminProductRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(ProductRepositoryInterface::class,ProductRepository::class);
+        $this->app->singleton(AdminProductRepositoryInterface::class,AdminProductRepository::class);
     }
 
     /**

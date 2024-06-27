@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\admin;
 
 use App\Models\Product;
 use App\Models\ProductImage;
@@ -9,7 +9,7 @@ use App\Traits\UploadFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
-class ProductRepository implements ProductRepositoryInterface
+class AdminProductRepository implements AdminProductRepositoryInterface
 {
 
     use UploadFile;
