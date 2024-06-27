@@ -41,23 +41,6 @@ class Product extends Model
         return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
 
     }
-
-    public function removeProduct(Product $product)
-    {
-        DB::transaction(function () use ($product) {
-            $product->delete();
-            ProductImage::query()->where('product_id', $product->id)->delete();
-            SeoItem::query()->where('ref_id', $product->id)->delete();
-            File::deleteDirectory('products/' . $product->id);
-        });
-    }
-
-    public function submitProductContent($formData, $productId)
-    {
-        Product::query()->where('id', $productId)->update([
-            'short_description' => $formData['short_description'],
-            'long_description' => $formData['long_description'],
-        ]);
-    }
+    
 
 }

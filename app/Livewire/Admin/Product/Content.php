@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Product;
 
 use App\Models\Product;
+use App\Repositories\admin\AdminProductRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
@@ -13,6 +14,15 @@ class Content extends Component
     public $shortDescription;
     public $productId;
 
+
+
+    private $repository;
+
+    public function boot(AdminProductRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function mount(Product $product)
     {
         $this->productName = $product->name;
@@ -22,7 +32,7 @@ class Content extends Component
 
     }
 
-    public function submit($formData, Product $product)
+    public function submit($formData)
     {
         $formData['long_description'] = $this->longDescription;
 
@@ -36,7 +46,7 @@ class Content extends Component
 
         $validator->validate();
         $this->resetValidation();
-        $product->submitProductContent($formData,$this->productId);
+        $this->repository->submitProductContent($formData,$this->productId);
         $this->redirect(route('admin.product.index'));
         session()->flash('success', 'محتوای محصول با موفقیت ثبت شد');
 

@@ -3,6 +3,7 @@
 namespace App\Repositories\admin;
 
 use App\Models\Product;
+use App\Models\ProductFeatureValue;
 use App\Models\ProductImage;
 use App\Models\SeoItem;
 use App\Traits\UploadFile;
@@ -152,6 +153,25 @@ class AdminProductRepository implements AdminProductRepositoryInterface
         ])->update(['is_cover' => true]);
 
 
+    }
+    public function submitProductFeatures($formData, $productId)
+    {
+
+        foreach ($formData as $value) {
+
+            list($featureId, $featureValueId) = explode('_', $value);
+            ProductFeatureValue::query()->updateOrCreate(
+                [
+                    'product_id'=>$productId,
+                    'category_feature_id'=>$featureId,
+                ],
+                [
+                    'category_feature_value_id'=>$featureValueId,
+                ]
+            );
+
+
+        }
     }
 
 }

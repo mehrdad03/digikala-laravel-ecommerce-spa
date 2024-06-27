@@ -23,4 +23,6 @@ interface AdminProductRepositoryInterface
     public function submitProductContent($formData, $productId);
     public function removeOldPhoto($productImage, $productId);
     public function setCoverOldImage($photoId,$productId);
+    public function submitProductFeatures($formData, $productId);
+
 }
