@@ -12,19 +12,4 @@ class CategoryFeatureValue extends Model
     use HasFactory,SoftDeletes;
 
     protected $guarded=[];
-
-    public function submit($formData,$valueId ,$featureId)
-    {
-
-        CategoryFeatureValue::query()->updateOrCreate(
-            [
-                'id' => $valueId
-            ],
-            [
-                'value' => $formData['value'],
-                'category_feature_id' => $featureId,
-
-            ]
-        );
-    }
 }

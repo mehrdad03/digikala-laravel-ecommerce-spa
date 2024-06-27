@@ -24,20 +24,4 @@ class Category extends Model
 
     }
 
-    public function submit($formData, $categoryId)
-    {
-        if ($formData['parentId']==""){
-            $formData['parentId']=null;
-        }
-        Category::query()->updateOrCreate(
-            [
-                'id'=>$categoryId
-            ],
-            [
-                'name'=>$formData['name'],
-                'category_id'=>$formData['parentId'],
-
-            ]
-        );
-    }
 }

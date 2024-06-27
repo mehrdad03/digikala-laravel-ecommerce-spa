@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Category;
 
 use App\Models\Category;
 use App\Models\CategoryFeature;
+use App\Repositories\admin\AdminCategoryRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -18,6 +19,13 @@ class Features extends Component
     public $featureId;
     public $name;
 
+
+    private $repository;
+
+    public function boot(AdminCategoryRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
     public function mount(Category $category)
     {
         $this->categoryName=$category->name;
@@ -25,7 +33,7 @@ class Features extends Component
         $this->categoryId=$category->id;
     }
 
-    public function submit($formData,CategoryFeature $categoryFeature)
+    public function submit($formData)
     {
 
         $validator = Validator::make($formData, [
@@ -38,7 +46,7 @@ class Features extends Component
 
         $validator->validate();
         $this->resetValidation();
-        $categoryFeature->submit($formData,$this->categoryId, $this->featureId);
+        $this->repository->submitCategoryFeature($formData,$this->categoryId, $this->featureId);
         $this->reset('name');
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
 
