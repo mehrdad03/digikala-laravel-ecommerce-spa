@@ -16,18 +16,4 @@ class City extends Model
         return $this->belongsTo(State::class);
 
     }
-
-    public function submit($formData, $stateId)
-    {
-
-        City::query()->updateOrCreate(
-            [
-                'id'=>$stateId
-            ],
-            [
-                'name'=>$formData['name'],
-                'state_id'=>$formData['stateId'],
-            ]
-        );
-    }
 }
