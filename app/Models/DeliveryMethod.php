@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class DeliveryMethod extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 }

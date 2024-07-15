@@ -162,11 +162,11 @@ class AdminProductRepository implements AdminProductRepositoryInterface
             list($featureId, $featureValueId) = explode('_', $value);
             ProductFeatureValue::query()->updateOrCreate(
                 [
-                    'product_id'=>$productId,
-                    'category_feature_id'=>$featureId,
+                    'product_id' => $productId,
+                    'category_feature_id' => $featureId,
                 ],
                 [
-                    'category_feature_value_id'=>$featureValueId,
+                    'category_feature_value_id' => $featureValueId,
                 ]
             );
 

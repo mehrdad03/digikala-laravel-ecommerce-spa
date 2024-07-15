@@ -12,6 +12,8 @@ use App\Livewire\Admin\Product\Index as productIndex;
 use App\Livewire\Admin\State\Index as stateIndex;
 use App\Livewire\Admin\City\Index as cityIndex;
 use App\Livewire\Admin\Category\Index as categoryIndex;
+use App\Livewire\Admin\Delivery\Index as deliveryIndex;
+use App\Livewire\Admin\Payment\Index as paymentIndex;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +30,8 @@ Route::name('admin.')->group(function (){
     Route::get('/product/create', Create::class)->name('product.create');
     Route::get('/product/feature/{product}', productFeatures::class)->name('product.features');
     Route::get('/product/content/{product}', Content::class)->name('product.content');
+    Route::get('/delivery', deliveryIndex::class)->name('delivery.index');
+    Route::get('/payment', paymentIndex::class)->name('payment.index');
 
     Route::post('/ck-upload/{productId}', [CkUpload::class,'upload'])->name('ck-upload');
 
