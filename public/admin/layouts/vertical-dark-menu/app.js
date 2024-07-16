@@ -96,8 +96,7 @@ var App = function() {
                                     if (submenuExpandedToggleEle) {
                                         submenuExpandedToggleEle.setAttribute('aria-expanded', 'false');
                                     }
-                                    
-                                });
+                                });پ
                             }
                         }
                     } else {
@@ -110,7 +109,7 @@ var App = function() {
                                     document.querySelector('li.menu.active').querySelector('.collapse.submenu.recent-submenu').classList.add('show');
                                     document.querySelector('.collapse.submenu.recent-submenu').parentNode.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'true');
                                 }
-                                
+
                             } else if (e === 'mouseleave') {
                                 getMenuList = document.querySelectorAll('li.menu');
                                 getMenuList.forEach(element => {
@@ -127,12 +126,12 @@ var App = function() {
                                     if (submenuExpandedToggleEle) {
                                         submenuExpandedToggleEle.setAttribute('aria-expanded', 'false');
                                     }
-                                    
+
                                 });
                             }
                         }
                     }
-                    
+
                 });
             });
 
@@ -148,24 +147,24 @@ var App = function() {
                 // hide overlay
                 Dom.class.overlay.classList.remove('show');
                 Dom.main.classList.remove('sidebar-noneoverflow');
-            });            
+            });
         },
         search: function() {
 
             if (Dom.class.search) {
-                
+
                 Dom.class.search.addEventListener('click', function(event) {
                     this.classList.add('show-search');
                     Dom.class.searchOverlay.classList.add('show');
                     document.querySelector('body').classList.add('search-active');
                 });
-                
+
                 Dom.class.searchOverlay.addEventListener('click', function(event) {
                     this.classList.remove('show');
                     Dom.class.search.classList.remove('show-search');
                     document.querySelector('body').classList.remove('search-active');
                 });
-                
+
                 document.querySelector('.search-close').addEventListener('click', function(event) {
                     event.stopPropagation();
                     Dom.class.searchOverlay.classList.remove('show');
@@ -180,9 +179,9 @@ var App = function() {
 
             var togglethemeEl = document.querySelector('.theme-toggle');
             var getBodyEl = document.body;
-            
+
             togglethemeEl.addEventListener('click', function() {
-                
+
                 var getLocalStorage = localStorage.getItem("theme");
                 var parseObj = JSON.parse(getLocalStorage);
 
@@ -195,7 +194,7 @@ var App = function() {
                     var newObject = { ...parseObj, settings: { layout: newParseObject }}
 
                     localStorage.setItem("theme", JSON.stringify(newObject))
-                    
+
                     var getUpdatedLocalObject = localStorage.getItem("theme");
                     var getUpdatedParseObject = JSON.parse(getUpdatedLocalObject);
 
@@ -208,7 +207,7 @@ var App = function() {
                             document.querySelector('.navbar-logo').setAttribute('src', getUpdatedParseObject.settings.layout.logo.lightLogo)
                         }
                     }
-                    
+
                 } else {
 
                     var getObjectSettings = parseObj.settings.layout;
@@ -218,7 +217,7 @@ var App = function() {
                     var newObject = { ...parseObj, settings: { layout: newParseObject }}
 
                     localStorage.setItem("theme", JSON.stringify(newObject))
-                    
+
                     var getUpdatedLocalObject = localStorage.getItem("theme");
                     var getUpdatedParseObject = JSON.parse(getUpdatedLocalObject);
 
@@ -232,14 +231,14 @@ var App = function() {
                         } else {
                             document.querySelector('.navbar-logo').setAttribute('src', getUpdatedParseObject.settings.layout.logo.darkLogo)
                         }
-                        
+
                     }
-                    
+
                 }
-                
+
                 // localStorage.clear()
             })
-            
+
         }
     }
 
@@ -247,7 +246,7 @@ var App = function() {
         mainCatActivateScroll: function() {
 
             if (document.querySelector('.menu-categories')) {
-            
+
                 const ps = new PerfectScrollbar('.menu-categories', {
                     wheelSpeed:.5,
                     swipeEasing:!0,
@@ -267,7 +266,7 @@ var App = function() {
                     maxScrollbarLength:300
                 });
             }
-            
+
         },
         preventScrollBody: function() {
             var nonScrollableElement = document.querySelectorAll('#sidebar, .user-profile-dropdown .dropdown-menu, .notification-dropdown .dropdown-menu,  .language-dropdown .dropdown-menu')
@@ -276,16 +275,16 @@ var App = function() {
                 e = e || window.event;
                 if (e.preventDefault)
                     e.preventDefault();
-                e.returnValue = false;  
+                e.returnValue = false;
 
-                nonScrollableElement.scrollTop -= e. wheelDeltaY; 
+                nonScrollableElement.scrollTop -= e. wheelDeltaY;
             }
 
             nonScrollableElement.forEach(preventScroll => {
 
                 preventScroll.addEventListener('mousewheel', preventScrolling);
                 preventScroll.addEventListener('DOMMouseScroll', preventScrolling);
-                
+
             });
         },
         searchKeyBind: function() {
@@ -297,9 +296,9 @@ var App = function() {
                     Dom.class.searchOverlay.classList.add('show');
                     Dom.class.searchForm.focus();
                     return false;
-                });                
+                });
             }
-            
+
         },
         bsTooltip: function() {
             var bsTooltip = document.querySelectorAll('.bs-tooltip')
@@ -320,15 +319,15 @@ var App = function() {
         },
         MaterialRippleEffect: function() {
             getAllBtn = document.querySelectorAll('button.btn, a.btn');
-            
+
             getAllBtn.forEach(btn => {
-    
+
                 if (!btn.classList.contains('_no--effects')) {
                     btn.classList.add('_effect--ripple');
                 }
-                
+
             });
-    
+
             if (document.querySelector('._effect--ripple')) {
                 Waves.attach('._effect--ripple', 'waves-light');
                 Waves.init();
@@ -355,7 +354,7 @@ var App = function() {
                 toggleFunction.sidebar();
             }
         },
-        
+
         onResize: function() {
             window.addEventListener('resize', function(event) {
                 event.preventDefault();
@@ -365,7 +364,7 @@ var App = function() {
                 }
             });
         }
-        
+
     }
 
     var _desktopResolution = {
@@ -377,7 +376,7 @@ var App = function() {
                 toggleFunction.onToggleSidebarSubmenu();
             }
         },
-        
+
         onResize: function() {
             window.addEventListener('resize', function(event) {
                 event.preventDefault();
@@ -387,7 +386,7 @@ var App = function() {
                 }
             });
         }
-        
+
     }
 
     function sidebarFunctionality() {
@@ -452,7 +451,7 @@ var App = function() {
             toggleFunction.overlay();
             toggleFunction.search();
             toggleFunction.themeToggle(Layout);
-            
+
             /*
                 Desktop Resoltion fn
             */
