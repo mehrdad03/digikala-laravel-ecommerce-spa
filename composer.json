@@ -8,6 +8,7 @@
         "php": "^8.2",
         "intervention/image": "^3.7",
         "laravel/framework": "^11.9",
+        "laravel/socialite": "^5.15",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "orangehill/iseed": "^3.0"
