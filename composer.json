@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ghasedak/laravel": "^2.1",
         "intervention/image": "^3.7",
         "laravel/framework": "^11.9",
         "laravel/socialite": "^5.15",

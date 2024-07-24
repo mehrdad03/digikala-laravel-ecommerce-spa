@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a12b604ddf47cc8819134998d04995f",
+    "content-hash": "53b4ad0a4d9fa8afe3300cfd9c5572d2",
     "packages": [
         {
             "name": "brick/math",
@@ -639,6 +639,112 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
+        },
+        {
+            "name": "ghasedak/laravel",
+            "version": "v2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ghasedakapi/ghasedak-laravel.git",
+                "reference": "527c265c559d53e37e70918f2ac4fd8f2764d2c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ghasedakapi/ghasedak-laravel/zipball/527c265c559d53e37e70918f2ac4fd8f2764d2c8",
+                "reference": "527c265c559d53e37e70918f2ac4fd8f2764d2c8",
+                "shasum": ""
+            },
+            "require": {
+                "ghasedak/php": "^2.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ghasedak\\Laravel\\GhasedakServiceProvider"
+                    ],
+                    "aliases": {
+                        "Ghasedak": "Ghasedak\\Laravel\\GhasedakFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ghasedak\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasoul Rahimii",
+                    "email": "RasoulRahimi93@gmail.com"
+                },
+                {
+                    "name": "Omid Mehri",
+                    "email": "thehopeofiran@gmail.com"
+                }
+            ],
+            "description": "Easy-to-use SDK for implementing Ghasedak SMS API in your Laravel projects.",
+            "support": {
+                "issues": "https://github.com/ghasedakapi/ghasedak-laravel/issues",
+                "source": "https://github.com/ghasedakapi/ghasedak-laravel/tree/v2.1.3"
+            },
+            "time": "2022-09-18T12:13:17+00:00"
+        },
+        {
+            "name": "ghasedak/php",
+            "version": "v2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ghasedakapi/ghasedak-php.git",
+                "reference": "f0aaee5279ca8ac378dd1e5bc29b2dfa8800b6c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ghasedakapi/ghasedak-php/zipball/f0aaee5279ca8ac378dd1e5bc29b2dfa8800b6c4",
+                "reference": "f0aaee5279ca8ac378dd1e5bc29b2dfa8800b6c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ghasedak\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abbas Hosseinpour",
+                    "email": "abdolzahra512@gmail.com"
+                },
+                {
+                    "name": "Omid Mehri",
+                    "email": "thehopeofiran@gmail.com"
+                }
+            ],
+            "description": "ghasedak sms gateway package for PHP",
+            "homepage": "https://github.com/ghasedakapi/ghasedak-php",
+            "keywords": [
+                "Ghasedak",
+                "api",
+                "notification",
+                "sms",
+                "sms-gateway"
+            ],
+            "support": {
+                "issues": "https://github.com/ghasedakapi/ghasedak-php/issues",
+                "source": "https://github.com/ghasedakapi/ghasedak-php/tree/v2.1.3"
+            },
+            "time": "2022-09-18T12:12:33+00:00"
         },
         {
             "name": "graham-campbell/result-type",

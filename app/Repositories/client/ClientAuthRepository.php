@@ -18,14 +18,41 @@ class ClientAuthRepository implements ClientAuthRepositoryInterface
                     'email' => $gmailUser['email'],
                 ],
                 [
-                'picture' => $gmailUser['picture'],
-                'name' => $gmailUser['name'],
-            ]);
+                    'picture' => $gmailUser['picture'],
+                    'name' => $gmailUser['name'],
+                ]);
 
             Auth::login($newUser, true);
         } else {
 
             Auth::login($existingUser, true);
+        }
+
+    }
+
+    public function submitUserWithMobile($formData, $otpCode, $userMobile)
+    {
+        if ($formData['code'] == $otpCode) {
+
+            $existingUser = User::query()->where('mobile', $userMobile)->first();
+
+            if (!$existingUser) {
+
+                $newUser = User::query()->create(
+                    [
+                        'mobile' => $userMobile,
+                    ],
+                );
+
+                Auth::login($newUser, true);
+            } else {
+
+                Auth::login($existingUser, true);
+            }
+            return true;
+
+        } else {
+            return false;
         }
 
     }
