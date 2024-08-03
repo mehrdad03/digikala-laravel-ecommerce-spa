@@ -58,13 +58,13 @@
                                     <div class="page-title">
                                     </div>
 
-                                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                                  {{--  <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Sales</li>
                                         </ol>
                                     </nav>
-
+--}}
                                 </div>
                             </div>
                             <ul class="navbar-nav flex-row ms-auto breadcrumb-action-dropdown">

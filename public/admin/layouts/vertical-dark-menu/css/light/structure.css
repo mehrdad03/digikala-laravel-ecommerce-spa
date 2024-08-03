@@ -1123,7 +1123,6 @@ body .navbar .dark-mode, body:not(.dark) .navbar .dark-mode {
   padding-right: 24px;
   margin-right: 36px;
   font-size: 14px;
-  color: #515365;
 }
 #sidebar ul.menu-categories li.menu ul.submenu > li a:before {
   content: "";

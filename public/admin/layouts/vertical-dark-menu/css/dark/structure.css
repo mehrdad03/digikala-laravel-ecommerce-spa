@@ -1087,7 +1087,6 @@ body.dark #sidebar ul.menu-categories ul.submenu > li a {
   padding-right: 24px;
   margin-right: 36px;
   font-size: 14px;
-  color: #888ea8;
 }
 body.dark #sidebar ul.menu-categories li.menu ul.submenu > li a:before {
   content: "";

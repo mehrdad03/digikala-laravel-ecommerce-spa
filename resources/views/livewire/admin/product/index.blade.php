@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{$product->category->name}}</td>
+                            <td>{{@$product->category->name}}</td>
                             <td>{{number_format($product->price)}}</td>
                             <td class="text-center">
                                 <a href="{{route('admin.product.features',$product->id)}}" class="btn btn-outline-info">ویژگی</a>
