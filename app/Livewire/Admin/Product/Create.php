@@ -48,7 +48,7 @@ class Create extends Component
                 ->with('seo', 'images')
                 ->where('id', $this->productId)->firstOrFail();
             $this->name = $product->name;
-            $this->slug = $product->seo->slug;
+            @$this->slug = $product->seo->slug;
             @$this->coverIndex = $product->coverImage->id;
         }
 
