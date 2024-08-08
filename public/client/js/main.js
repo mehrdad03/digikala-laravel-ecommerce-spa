@@ -85,6 +85,57 @@ $(document).ready(function () {
         $("#clean").show();
     });
 
+
+
+    // Initial countdown time (24 hours)
+    let totalSeconds = 24 * 3600;
+
+    function updateCountdown() {
+        let hours = Math.floor(totalSeconds / 3600);
+        let minutes = Math.floor((totalSeconds % 3600) / 60);
+        let seconds = totalSeconds % 60;
+
+        $("#hours").text(String(hours).padStart(2, "0"));
+        $("#minutes").text(String(minutes).padStart(2, "0"));
+        $("#seconds").text(String(seconds).padStart(2, "0"));
+
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            clearInterval(countdownInterval);
+        }
+    }
+
+    let countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call to set the timer immediately
+
+//remove wire:snapshot form tags in client
+    let attrs = [
+        'snapshot',
+        'effects',
+        // 'id'
+    ];
+
+    function snapKill() {
+        document.querySelectorAll('div').forEach(function (element) {
+            for (let i in attrs) {
+                if (element.getAttribute(`wire:${attrs[i]}`) !== null) {
+                    element.removeAttribute(`wire:${attrs[i]}`);
+                }
+            }
+        });
+    }
+
+    window.addEventListener('load', (ev) => {
+        snapKill();
+    });
+
+
+
+
+});
+
+function initializeSwiper (){
     // Story section
     var swiper2 = new Swiper(".myStorySwiper", {
         slidesPerView: 12,
@@ -176,49 +227,4 @@ $(document).ready(function () {
             },
         },
     });
-
-    // Initial countdown time (24 hours)
-    let totalSeconds = 24 * 3600;
-
-    function updateCountdown() {
-        let hours = Math.floor(totalSeconds / 3600);
-        let minutes = Math.floor((totalSeconds % 3600) / 60);
-        let seconds = totalSeconds % 60;
-
-        $("#hours").text(String(hours).padStart(2, "0"));
-        $("#minutes").text(String(minutes).padStart(2, "0"));
-        $("#seconds").text(String(seconds).padStart(2, "0"));
-
-        if (totalSeconds > 0) {
-            totalSeconds--;
-        } else {
-            clearInterval(countdownInterval);
-        }
-    }
-
-    let countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call to set the timer immediately
-
-//remove wire:snapshot form tags in client
-    let attrs = [
-        'snapshot',
-        'effects',
-        // 'id'
-    ];
-
-    function snapKill() {
-        document.querySelectorAll('div').forEach(function (element) {
-            for (let i in attrs) {
-                if (element.getAttribute(`wire:${attrs[i]}`) !== null) {
-                    element.removeAttribute(`wire:${attrs[i]}`);
-                }
-            }
-        });
-    }
-
-    window.addEventListener('load', (ev) => {
-        snapKill();
-    });
-
-
-});
+}
