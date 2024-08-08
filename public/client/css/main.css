@@ -14,8 +14,16 @@ a {
 ul {
   list-style: none;
 }
+hr {
+  border-color: #b9b9b9;
+}
 
-/* utitlities */
+/* ===== utitlities ===== */
+
+/* color */
+.bg-light {
+  background-color: #eee;
+}
 
 /* margins */
 .mx-6 {
@@ -31,6 +39,9 @@ ul {
 }
 .fs-8 {
   font-size: 13px;
+}
+.fs-9 {
+  font-size: 11px;
 }
 
 .pip {
@@ -50,6 +61,141 @@ li:hover .navLinkHoverAnimation {
 }
 
 /* header */
+#desktop-main-header {
+  position: relative;
+  z-index: 1045 !important;
+  background-color: white;
+}
+#desktopSearchBox .modal {
+  position: absolute;
+  top: 2%;
+  right: 9.7%;
+}
+.modal-backdrop {
+  z-index: 1040;
+}
+#desktopSearchBox .modal-dialog {
+  top: 2%;
+  right: 9.7%;
+}
+#desktopSearchBox .modal-dialog {
+  width: 100%;
+  margin: 0;
+}
+#desktopSearchBox .modal-content {
+  width: 37.5rem;
+}
+.myHeaderSearchSwiper .swiper {
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+}
+.myHeaderSearchSwiper .swiper-button-prev,
+.myHeaderSearchSwiper .swiper-button-next {
+  color: #bbb;
+  background-color: white;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Adjust this value as needed */
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 15px;
+}
+
+.mega-menu {
+  position: absolute;
+  width: 80%;
+  right: 2em;
+  top: 9em;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 5px;
+  z-index: 10000;
+  display: none;
+  cursor: pointer;
+}
+.has-submenu::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 0px;
+  top: 65px;
+  right: 65px;
+}
+.has-submenu:hover > .submenu {
+  display: flex !important;
+}
+.has-submenu:hover::before {
+  height: 80px;
+}
+.mega-menu .menu-list {
+  width: 20%;
+}
+.mega-menu .menu-list > ul {
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  padding-right: 0.5em;
+}
+.mega-menu .menu-list > ul li {
+  padding: 1em 1em 1em 2em;
+  cursor: pointer;
+  margin: 0.5em 0;
+  transition: 0.4s;
+  font-size: 14px;
+  border-radius: 0 5px 5px 0;
+}
+.mega-menu .menu-list > ul > li:hover {
+  background: #fff;
+  color: #ef394e;
+}
+.mega-menu .menu-list > ul > li.active {
+  background: #fff;
+  color: #ef394e;
+}
+.mega-menu .categorys {
+  width: 80%;
+}
+.categorys .category {
+  display: none;
+}
+.categorys .category.active {
+  display: block;
+}
+.categorys .category .category-header {
+  padding: 1em;
+}
+.category .items {
+  display: flex;
+  justify-content: space-around;
+  color: #4a5f73;
+  margin-top: 1em;
+}
+.category .items .item ul li.header {
+  color: #616161;
+  margin: 0.5em 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+.category .items .item ul li {
+  transition: 0.4s;
+  cursor: pointer;
+}
+.category .items .item ul li:hover {
+  color: #ef394e;
+}
+.submenu {
+  position: absolute;
+  display: none;
+}
 .searchInput {
   width: 50%;
 }
@@ -66,7 +212,7 @@ li:hover .navLinkHoverAnimation {
 
 #mSearchBox {
   display: none;
-  position: absolute;
+  position: fixed;
   font-size: 13px;
   top: 100%;
   right: 0;
@@ -89,31 +235,69 @@ li:hover .navLinkHoverAnimation {
 }
 
 /* Story section */
-.story img{
+.story {
+  height: 200px;
+}
+.myStorySwiper .swiper-button-next , .swiper-button-prev {
+  color: #fff; /* Change the color */
+  background-color: #bbbbbba4 !important; /* Add a semi-transparent white background */
+  border-radius: 50%; /* Make the buttons round */
+  width: 40px; /* Set width */
+  height: 40px; /* Set height */
+  display: flex; /* Center the icon inside */
+  justify-content: center; /* Center the icon inside */
+  align-items: center; /* Center the icon inside */
+}
+.story .swiper {
+  padding: 2rem;
+  transform: translateY(-20%);
+  width: 100%;
+  height: 100% !important;
+}
+.story .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.story img {
   outline: 1.5px solid red;
   outline-offset: 3px;
   border-radius: 100%;
 }
+.swiper-pagination-bullet {
+  background-color: #007bff;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ef394e;
+}
 
 /* Product slider */
-.productSlider{
+.productSlider {
   height: 330px;
 }
-.productSlider > .productItems{
+.productSlider > .productItems {
   width: 100%;
   height: 290px;
   padding: 15px;
   box-sizing: border-box;
   border-radius: 30px;
 }
-.swiper {
+#product .swiper {
   width: 100%;
   height: 100%;
 }
-.swiper-slide {
-  max-width: 200px;
+#product .swiper-slide:first-child {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+#product .swiper-slide:last-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#product .swiper-slide {
+  max-width: 200px;
   text-align: center;
   background: #fff;
   display: flex;
@@ -121,15 +305,16 @@ li:hover .navLinkHoverAnimation {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.swiper-slide img {
+#product .swiper-slide img {
   display: block;
   margin: 10px auto;
   width: 70%;
   object-fit: cover;
 }
 
-.swiper-slide .price h6{
+#product .swiper-slide h6 {
   background-color: red;
   font-size: 12px;
   color: #fff;
@@ -138,18 +323,21 @@ li:hover .navLinkHoverAnimation {
   border-radius: 100%;
   text-wrap: nowrap;
 }
-.swiper-slide .beforeDiscount{
-  text-decoration: line-through;
-}
-.swiper-slide .beforeDiscount::after{
+#product .swiper-slide .beforeDiscount::after {
   content: "تومان";
   font-size: 14px;
   margin-right: 10px;
 }
 /* Swiper navigation buttons customization */
-.swiper-button-next, .swiper-button-prev {
+#product .swiper-button-next,
+.swiper-button-prev {
   color: #000; /* Change the color */
-  background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Add a semi-transparent white background */
   border-radius: 50%; /* Make the buttons round */
   width: 40px; /* Set width */
   height: 40px; /* Set height */
@@ -159,31 +347,148 @@ li:hover .navLinkHoverAnimation {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly darker background on hover */
+#product .swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly darker background on hover */
   color: #007bff; /* Change icon color on hover */
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
+#product .swiper-button-next:after,
+.swiper-button-prev:after {
   font-size: 18px; /* Increase the size of the icon */
 }
 
 /* Super market Suggest */
-.superMarketSuggest .offProduct{
+.superMarketSuggest .offProduct {
   position: relative;
 }
-.superMarketSuggest .offProduct img{
+.superMarketSuggest .offProduct img {
   max-width: 70px;
   border-radius: 100%;
 }
-.superMarketSuggest .offProduct span{
+.superMarketSuggest .offProduct span {
   position: absolute;
   bottom: -5px;
   right: -8px;
   font-size: 12px;
 }
 
+/* Brands */
+.brands .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.brands .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands .swiper-slide img {
+  max-width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: auto 0;
+}
+
+/* weblogs */
+.blog img {
+  width: 100%;
+  max-height: 190px;
+  object-fit: cover;
+}
+.blog {
+  width: 300px;
+  height: 280px;
+}
+
+/* footer */
+footer .subBrand a {
+  width: 190px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #bbb;
+}
+
 /* Media Queries */
+@media screen and (max-width: 320px){
+  .services {
+    padding-right: 18rem !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .searchInput {
+    border-radius: 50px !important;
+  }
+  .story{
+    height: 120px;
+  }
+  .story img {
+    width: 60px;
+  }
+  .story p {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  #carouselExampleInterval .carousel-inner .carousel-item img {
+    object-fit: cover;
+    height: 250px;
+  }
+  .services {
+    padding-right: 13rem;
+  }
+  .services p {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .productSlider > .productItems {
+    border-radius: 0;
+    padding: 10px;
+  }
+  .productSlider .productItems .Suggestion img {
+    width: 30px;
+  }
+  #product .swiper-slide:first-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  #product .swiper-slide {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #product .swiper-slide .price {
+    font-size: 10px;
+  }
+  #product .swiper-slide img {
+    width: 100px;
+  }
+  #product .swiper-slide h6 {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    font-size: 10px;
+  }
+  .beforeDiscount {
+    font-size: 10px;
+    color: #bbb;
+  }
+  #product .swiper-slide .beforeDiscount::after {
+    font-size: 10px;
+  }
+  .accordion-button::after {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .searchInput {
     width: 100%;
@@ -191,7 +496,13 @@ li:hover .navLinkHoverAnimation {
   .searchInput input {
     width: 50px;
   }
+  .mx-lg-6 {
+    margin: 0;
+  }
   .mx-lg-7 {
     margin: 0;
+  }
+  .copyright {
+    margin: 20px 0 30% 0;
   }
 }

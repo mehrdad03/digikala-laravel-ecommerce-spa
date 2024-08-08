@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css" />
+    <title>Loading</title>
+  </head>
+  <body>
+    <style>
+      .loader {
+        width: 60px;
+        aspect-ratio: 4;
+        --_g: no-repeat
+          radial-gradient(circle closest-side, #ff0000 90%, #ff000000);
+        background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+        background-size: calc(100% / 3) 100%;
+        animation: l7 1s infinite linear;
+      }
+      @keyframes l7 {
+        33% {
+          background-size: calc(100% / 3) 0%, calc(100% / 3) 100%,
+            calc(100% / 3) 100%;
+        }
+        50% {
+          background-size: calc(100% / 3) 100%, calc(100% / 3) 0%,
+            calc(100% / 3) 100%;
+        }
+        66% {
+          background-size: calc(100% / 3) 100%, calc(100% / 3) 100%,
+            calc(100% / 3) 0%;
+        }
+      }
+    </style>
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div
+            class="modal-body p-4 d-flex flex-column align-items-center justify-content-center gap-5">
+            <img src="../assets/logo.svg" alt="logo" class="mb-4" />
+            <div class="loader mb-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
