@@ -2,18 +2,22 @@
 
 namespace App\Models;
 
+use App\Events\ProductChanged;
 use App\Traits\UploadFile;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-
 
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes,UploadFile;
+    use HasFactory, SoftDeletes, UploadFile;
+
+    protected $dispatchesEvents = [
+        'created' => ProductChanged::class,
+        'updated' => ProductChanged::class,
+        'deleted' => ProductChanged::class,
+    ];
 
     protected $guarded = [];
 
@@ -41,6 +45,6 @@ class Product extends Model
         return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
 
     }
-    
+
 
 }
