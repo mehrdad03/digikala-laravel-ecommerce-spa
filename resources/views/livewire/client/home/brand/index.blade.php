@@ -1,4 +1,4 @@
-<div>
+<div x-intersect="initializeSwiper">
     <section class="container my-5 border rounded p-3 brands">
         <h4 class="text-center">✨&nbsp; محبوب‌ترین برندها</h4>
         <div class="swiper myBrandSwiper">

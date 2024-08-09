@@ -109,7 +109,8 @@ $(document).ready(function () {
     let countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call to set the timer immediately
 
-//remove wire:snapshot form tags in client
+  //remove wire:snapshot form tags in client
+
     let attrs = [
         'snapshot',
         'effects',
@@ -129,7 +130,6 @@ $(document).ready(function () {
     window.addEventListener('load', (ev) => {
         snapKill();
     });
-
 
 
 

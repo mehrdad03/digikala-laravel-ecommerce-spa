@@ -1,4 +1,4 @@
-<div>
+<div x-intersect="initializeSwiper">
     <section
         class="container-fluid px-0 container-lg my-4 my-lg-0 py-lg-4 productSlider">
         <div

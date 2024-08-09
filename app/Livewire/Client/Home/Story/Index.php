@@ -10,10 +10,8 @@ class Index extends Component
     {
         return view('Layouts.client.placeholders.first-page.stories-skeleton');
     }
-
     public function render()
     {
-        sleep(1);
         return view('livewire.client.home.story.index');
     }
 }
