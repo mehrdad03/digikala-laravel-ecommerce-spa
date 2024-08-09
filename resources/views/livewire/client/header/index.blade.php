@@ -3738,7 +3738,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-2 d-flex align-items-center gap-2">
+            <div class="col-2 d-flex align-items-center gap-2 justify-content-end">
           <span>
             <svg
                 width="20"

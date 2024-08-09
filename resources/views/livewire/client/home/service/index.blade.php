@@ -1,6 +1,6 @@
 <div>
     <section
-        class="services container d-flex overflow-x-auto px-lg-0 flex-md-wrap align-items-center justify-content-center gap-3 gap-lg-5 mt-3 mt-lg-5">
+        class="services container d-flex overflow-x-auto px-lg-0 flex-md-wrap align-items-center justify-content-between gap-3 gap-lg-5 mt-3 mt-lg-3">
         <div
             class="d-flex flex-column align-items-center justify-content-center gap-2">
             <a href="#">

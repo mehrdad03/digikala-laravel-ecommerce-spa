@@ -99,7 +99,7 @@
 
 <!-- === Footer === -->
 <footer class="mt-5 border-top pt-5">
-    <div class="container-fluid px-lg-5">
+    <div class="container px-lg-5">
         <div
             class="d-none d-lg-flex align-items-center justify-content-between">
             <img width="100" src="/client/assets/digi.svg" alt="digi"/>
@@ -296,7 +296,7 @@
         </div>
 
         <div
-            class="container d-none d-lg-flex align-items-center justify-content-center flex-wrap gap-5 mt-5">
+            class="container d-none d-lg-flex align-items-center justify-content-between flex-wrap gap-5 mt-5">
             <div
                 class="d-flex flex-column align-items-center justify-content-center">
                 <img
@@ -529,7 +529,7 @@
             </div>
 
             <div
-                class="col-12 col-lg-6 d-flex flex-wrap align-items-center mt-3 justify-content-center gap-lg-5 gap-3">
+                class="col-12 col-lg-6 d-flex flex-wrap align-items-center mt-3 justify-content-end gap-lg-5 gap-3">
                 <div class="border p-3 rounded">
                     <img width="80" src="/client/assets/footer/rezi.webp" alt=""/>
                 </div>

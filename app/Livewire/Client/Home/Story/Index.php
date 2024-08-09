@@ -8,17 +8,12 @@ class Index extends Component
 {
     public function placeholder()
     {
-        return <<<'HTML'
-        <div>
-            <!-- Loading spinner... -->
-            <svg>...</svg>
-        </div>
-        HTML;
+        return view('Layouts.client.placeholders.first-page.stories-skeleton');
     }
 
     public function render()
     {
-        sleep(2);
+        sleep(1);
         return view('livewire.client.home.story.index');
     }
 }

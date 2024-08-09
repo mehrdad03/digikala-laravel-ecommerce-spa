@@ -170,7 +170,7 @@ function initializeSwiper (){
     });
 
     // product slider
-    var swiper = new Swiper(".mySwiper", {
+    var swiper1 = new Swiper(".mySwiper", {
         slidesPerView: 5,
         spaceBetween: 10,
         navigation: {
@@ -199,7 +199,7 @@ function initializeSwiper (){
     });
 
     // Brands slider
-    var swiper = new Swiper(".myBrandSwiper", {
+    var swiper3 = new Swiper(".myBrandSwiper", {
         slidesPerView: 5,
         spaceBetween: 10,
 

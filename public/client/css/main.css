@@ -235,9 +235,6 @@ li:hover .navLinkHoverAnimation {
 }
 
 /* Story section */
-.story {
-  height: 200px;
-}
 .myStorySwiper .swiper-button-next , .swiper-button-prev {
   color: #fff; /* Change the color */
   background-color: #bbbbbba4 !important; /* Add a semi-transparent white background */
@@ -249,7 +246,7 @@ li:hover .navLinkHoverAnimation {
   align-items: center; /* Center the icon inside */
 }
 .story .swiper {
-  padding: 2rem;
+
   transform: translateY(-20%);
   width: 100%;
   height: 100% !important;

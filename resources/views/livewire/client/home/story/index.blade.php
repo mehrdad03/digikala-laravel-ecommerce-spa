@@ -1,8 +1,7 @@
-<div>
-    <!-- === Story section === -->
+<div x-intersect="initializeSwiper">
     <section class="container-fluid p-0 container-lg mt-4 story">
-        <div class="d-flex py-2 py-lg-5 py-md-3 justify-content-center align-items-center">
-            <div class="swiper myStorySwiper px-0">
+        <div class="d-flex py-2 justify-content-center align-items-center">
+            <div class="swiper myStorySwiper pt-4">
                 <div class="swiper-wrapper">
                     <div
                         class="swiper-slide d-flex flex-column justify-content-center"

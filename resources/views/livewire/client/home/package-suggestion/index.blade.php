@@ -1,6 +1,6 @@
 <div>
     <section
-        class="container d-flex align-items-center justify-content-center flex-wrap gap-3">
+        class="container d-flex align-items-center justify-content-center flex-wrap gap-3 p-0">
         <a href="#">
             <img
                 class="rounded-4"

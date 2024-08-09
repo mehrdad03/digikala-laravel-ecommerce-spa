@@ -1,5 +1,5 @@
 <div>
-    <section class="container my-5">
+    <section class="container my-5 p-0">
         <div class="w-100 d-flex align-items-center justify-content-between mb-3">
             <h3 class="fs-5 fw-medium">خواندنی‌ها</h3>
             <a href="#" class="text-info fs-8">
@@ -21,7 +21,7 @@
         </div>
         <!-- blogs -->
         <div
-            class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+            class="d-flex flex-wrap align-items-center justify-content-center gap-4 p-0">
             <a href="#" class="blog rounded-3 border d-flex flex-column">
                 <img
                     src="/client/assets/blog/paris-olympics-opening-ceremony.jpg"

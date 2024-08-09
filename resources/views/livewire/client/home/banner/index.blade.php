@@ -1,4 +1,4 @@
-<div>
+<div x-intersect="initializeSwiper">
     <section
         class="container my-4 bg-secondary-subtle rounded-4 superMarketSuggest overflow-hidden">
         <a href="#" class="row align-items-center p-4">
