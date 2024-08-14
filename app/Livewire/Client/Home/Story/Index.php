@@ -12,7 +12,6 @@ class Index extends Component
     }
     public function render()
     {
-        sleep(2);
         return view('livewire.client.home.story.index');
     }
 }
