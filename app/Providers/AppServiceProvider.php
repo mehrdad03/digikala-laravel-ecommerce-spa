@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AdminStateRepositoryInterface::class,AdminStateRepository::class);
         $this->app->singleton(AdminDeliveryRepositoryInterface::class,AdminDeliveryRepository::class);
         $this->app->singleton(AdminPaymentRepositoryInterface::class,AdminPaymentRepository::class);
+        $this->app->singleton(AdminPaymentRepositoryInterface::class,AdminStateRepository::class);
 
         $this->app->singleton(ClientAuthRepositoryInterface::class, ClientAuthRepository::class);
 
