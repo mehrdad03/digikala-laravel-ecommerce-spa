@@ -52,6 +52,7 @@ class Index extends Component
 
         $this->repository->submit($formData, $this->thumbnail, $this->story);
         $this->dispatch('success', 'عملیات با موفقیت انجام شد!');
+        $this->reset();
 
     }
 
