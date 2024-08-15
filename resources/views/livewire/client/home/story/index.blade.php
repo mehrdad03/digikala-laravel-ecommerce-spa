@@ -28,7 +28,7 @@
         tabindex="-1"
         aria-labelledby="storyModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" style="width: 500px;">
+        <div class="modal-dialog modal-dialog-centered modal-xl" style="width: 400px;">
             <div class="modal-content bg-transparent border-0">
                 <div class="modal-header border-bottom-0">
                     <button
