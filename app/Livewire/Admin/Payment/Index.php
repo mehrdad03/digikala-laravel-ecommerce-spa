@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Payment;
 
 use App\Models\PaymentMethod;
+use App\Repositories\admin\AdminPaymentRepository;
 use App\Repositories\admin\AdminPaymentRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
@@ -15,7 +16,7 @@ class Index extends Component
 
     private $repository;
 
-    public function boot(AdminPaymentRepositoryInterface $repository)
+    public function boot(AdminPaymentRepository $repository)
     {
         $this->repository = $repository;
     }
