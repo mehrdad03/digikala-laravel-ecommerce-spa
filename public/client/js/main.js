@@ -86,7 +86,6 @@ $(document).ready(function () {
     });
 
 
-
     // Initial countdown time (24 hours)
     let totalSeconds = 24 * 3600;
 
@@ -109,7 +108,7 @@ $(document).ready(function () {
     let countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call to set the timer immediately
 
-  //remove wire:snapshot form tags in client
+    //remove wire:snapshot form tags in client
 
     let attrs = [
         'snapshot',
@@ -132,10 +131,9 @@ $(document).ready(function () {
     });
 
 
-
 });
 
-function initializeSwiper (){
+function initializeSwiper() {
     // Story section
     var swiper2 = new Swiper(".myStorySwiper", {
         slidesPerView: 12,
@@ -227,4 +225,29 @@ function initializeSwiper (){
             },
         },
     });
+
+
+    // به تمام دکمه‌های با ویژگی data-story event listener اضافه کنید
+    $('.story-item[data-story]').on('click', function () {
+        // دریافت URL ویدیو از data-story
+        var storyUrl = $(this).data('story');
+        var storyTitle = $(this).data('story-title');
+
+        // تنظیم URL به عنوان src تگ video
+        $('#videoSource').attr('src', storyUrl);
+        $('.modal-title').html(storyTitle);
+
+        // بارگذاری و پخش ویدیو
+        var videoPlayer = $('#videoPlayer').get(0);
+        videoPlayer.load();
+        videoPlayer.play();
+    });
+
+    // هنگامی که مدال بسته می‌شود
+    $('#storyModal').on('hide.bs.modal', function () {
+        var videoPlayer = $('#videoPlayer').get(0);
+        videoPlayer.pause(); // توقف ویدیو
+        videoPlayer.currentTime = 0; // تنظیم ویدیو به ابتدای آن
+    });
+
 }

@@ -28,4 +28,5 @@
 
     <!-- === weblog === -->
     <livewire:client.home.blog.index lazy/>
+
 </div>
