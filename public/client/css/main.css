@@ -50,6 +50,12 @@ hr {
   background-color: rgba(128, 128, 128, 0.397);
   margin: 0 3%;
 }
+.ellipsis{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 /* Animations */
 .navLinkHoverAnimation {

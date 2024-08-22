@@ -11,7 +11,6 @@ class Index extends Component
     public function mount()
     {
         $this->stories=Story::query()->where('status','=',true)->limit(15)->get();
-
     }
     public function placeholder()
     {
