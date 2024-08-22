@@ -10,19 +10,17 @@ class ClientFirstPageRepository implements ClientFirstPageRepositoryInterface
 {
     public function getFeaturedProducts()
     {
-        // فرض کنید تاریخ ورود کاربر به وبسایت در این متغیر ذخیره شده است
-        $userVisitDate = Carbon::now(); // یا هر تاریخ دیگری که شما دارید
-
-// فیلتر کردن محصولات بر اساس شرط‌های داده شده
-        $featuredProducts = Product::query()->whereNotNull('discount_duration') // discount_duration خالی نباشد
-        ->where('discount_duration', '>', $userVisitDate) // تاریخ ورود کاربر قبل از discount_duration باشد
-        ->where('featured', true)
+        $userVisitDate = Carbon::now();
+        $featuredProducts = Product::query()->whereNotNull('discount_duration')
+            ->where('discount_duration', '>', $userVisitDate)
+            ->where('featured', true)
+            ->with('coverImage', 'seo')
             ->get();
 
         return $featuredProducts->map(function ($product) {
             // اگر تخفیف درصدی است و مقدار discount موجود باشد
             $discountAmount = $product->discount ? ($product->price * $product->discount / 100) : 0;
-            $product->final_price = $product->price - $discountAmount;
+            $product->finalPrice = $product->price - $discountAmount;
             return $product;
         });
 
