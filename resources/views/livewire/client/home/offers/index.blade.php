@@ -51,7 +51,7 @@
             <div class="swiper mySwiper w-100" id="product">
                 <div class="swiper-wrapper">
                     @foreach($featuredProducts as $item)
-                        <div class="swiper-slide">
+                        <a href="{{route('client.product',$item->p_code)}}/{{$item->seo->slug}}" class="swiper-slide">
                             <div>
                                 <img
                                     src="/products/{{$item->id}}/medium/{{@$item->coverImage->path}}"
@@ -69,7 +69,7 @@
                                     <del class="beforeDiscount fs-9 text-end">{{number_format($item->price)}}</del>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
 
                 </div>
