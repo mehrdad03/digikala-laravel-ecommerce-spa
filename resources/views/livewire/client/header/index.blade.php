@@ -70,14 +70,16 @@
                     <input type="text" placeholder="جستجو"/>
                 </div>
             </div>
-
             <!-- login & cart -->
             <div
                 class="col-lg-4 d-none d-lg-flex justify-content-end align-items-center">
                 <a
-                    href="/client/pages/login.html"
+                    href="{{route('client.auth.index')}}"
                     class="d-flex align-items-center gap-2 text-black fs-8 border border-secondary-subtle rounded px-3 py-2">
-            <span>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        {{auth()->user()->name}}
+                    @else
+                        <span>
               <svg
                   width="20"
                   height="20"
@@ -93,10 +95,13 @@
                     d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"/>
               </svg>
             </span>
-                    <p class="fw-medium">ورود | ثبت‌نام</p>
+                        <p class="fw-medium">ورود | ثبت‌نام</p>
+                    @endif
                 </a>
                 <div class="pip"></div>
-                <span>
+                <span class="cart">
+
+                    <span class="cart-count bg-danger rounded-1">{{$cart}}</span>
             <svg
                 width="28"
                 height="28"

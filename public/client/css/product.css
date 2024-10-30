@@ -1,0 +1,332 @@
+/* utilities */
+.purple-color {
+    color: #b12ba4;
+}
+.vote-loader{
+    width: 24px;
+    background: radial-gradient(circle closest-side, #b1b1b1 90%, #0000) 0 / calc(100% / 3) 100% space;
+}
+
+.slider {
+    overflow: hidden;
+    height: 25px; /* Adjust based on the height of your text */
+    position: relative;
+}
+
+.slider p {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slider p.active {
+    top: 0;
+    opacity: 1;
+}
+
+.slider p.next {
+    top: 100%;
+    opacity: 1;
+}
+
+/* Color Picker */
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: 4px solid transparent;
+    outline-offset: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.color-circle.selected {
+    outline-color: rgb(0, 191, 255);
+}
+
+.check-svg {
+    position: absolute;
+    display: none;
+}
+
+.color-circle.selected .check-svg {
+    display: block;
+}
+
+.color1 {
+    background-color: #000;
+}
+
+.color2 {
+    background-color: green;
+}
+
+.color3 {
+    background-color: blue;
+}
+
+/* sellers */
+#sellers > div:nth-child(2n) {
+    background-color: #eee;
+}
+
+/* Product Detials */
+.nav-item a {
+    color: #6c757d;
+    text-align: center;
+}
+
+.border-title {
+    width: 80px;
+    border: 1.8px solid red;
+}
+
+.nav-item .indicator {
+    display: none;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+}
+
+.nav-item.active a {
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-item.active .indicator {
+    display: block;
+}
+
+.content-div {
+    display: none;
+}
+
+.content-div.active {
+    display: block;
+}
+
+/* Show more / less  */
+.more-content {
+    display: none;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: #007bff;
+}
+
+.toggle-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.chevron {
+    transition: transform 0.3s;
+}
+
+.chevron.down {
+    transform: rotate(0deg);
+}
+
+.chevron.up {
+    transform: rotate(180deg);
+}
+
+#colorList li {
+    cursor: pointer;
+}
+
+/* mobile product image */
+.swiper.myGallerySwiper {
+    width: 100%;
+    height: 250px;
+}
+
+.myGallerySwiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myGallerySwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.myGallerySwiper .swiper-pagination {
+    transform: translate(-30%, 50%);
+}
+
+.myGallerySwiper .swiper-pagination-bullet {
+    background-color: #007bff;
+    width: 6px;
+    height: 6px;
+}
+
+.myGallerySwiper .swiper-pagination-bullet-active {
+    background-color: #ef394e;
+    width: 8px;
+    height: 8px;
+}
+
+/* mobile feature */
+.myProductFeatureSwiper.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.myQuestionSwiper .swiper-slide {
+    border: 1px solid #d8d8d8 !important;
+    border-radius: 8px;
+}
+
+.myQuestionSwiper button.swiper-slide {
+    border: none !important;
+}
+
+.modal-fullscreen-lg-down {
+    height: auto;
+    width: 100vw;
+}
+
+
+#commentModal .modal-content {
+    height: 600px;
+    overflow: auto;
+}
+
+/* Remove focus outline from input and button */
+#inputTextPositive:focus, #inputTextNegative:focus, #addButtonPositive:focus, #addButtonNegative:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Add padding to input for better alignment */
+#inputTextPositive, #inputTextNegative {
+    padding-left: 10px;
+}
+
+/* Adjust button hover effect */
+#addButtonPositive:hover, #addButtonNegative:hover {
+    color: #007bff;
+}
+
+
+/* question modal */
+textarea {
+    resize: none;
+}
+
+#charCount {
+    margin-top: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 425px) {
+    .border {
+        border: none !important;
+    }
+
+    .breadcrumb {
+        font-size: 0.6rem;
+    }
+
+    .productDescription a {
+        font-size: 0.6rem;
+    }
+
+    .productDescription h5 {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .productDescription .rating p,
+    a {
+        font-size: 0.6rem;
+    }
+
+    .productFeatures div {
+        width: auto;
+        gap: 0;
+    }
+
+    .productFeatures div p {
+        font-size: 0.5rem;
+    }
+
+    .myProductFeatureSwiper .swiper-slide p {
+        font-size: 0.6rem;
+    }
+
+    .color-circle {
+        width: 20px;
+        height: 20px;
+    }
+
+    .seller {
+        background-color: #e9e9e9;
+    }
+
+    .seller div {
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .seller h6 {
+        font-size: 0.7rem;
+    }
+
+    .seller p {
+        font-size: 0.6rem;
+    }
+
+    .seller svg {
+        width: 18px;
+    }
+
+    .options a p {
+        font-size: 0.56rem;
+    }
+
+    #details ul li {
+        font-size: 0.7rem;
+    }
+
+    .nav-item .indicator {
+        height: 1px;
+    }
+
+    #details #content p {
+        font-size: 0.7rem;
+    }
+
+    #details #content h5 {
+        font-size: 0.9rem;
+    }
+
+    .border-title {
+        width: 50px;
+    }
+
+    header {
+        position: fixed !important;
+        top: 0;
+    }
+
+    footer {
+        margin-bottom: 100px !important;
+    }
+}

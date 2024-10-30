@@ -56,6 +56,20 @@ hr {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+/* loader */
+.loader {
+    width: 40px;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side, #ffffff 90%, #0000) 0/calc(100% / 3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: l1 1s steps(4) infinite;
+}
+
+@keyframes l1 {
+    to {
+        clip-path: inset(0 -34% 0 0)
+    }
+}
 
 /* Animations */
 .navLinkHoverAnimation {
@@ -96,6 +110,16 @@ li:hover .navLinkHoverAnimation {
   height: 100%;
   margin: 20px 0;
 }
+/*cart*/
+.cart-count {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    padding: 0;
+    text-align-last: center;
+    color: #fff;
+}
+
 .myHeaderSearchSwiper .swiper-button-prev,
 .myHeaderSearchSwiper .swiper-button-next {
   color: #bbb;

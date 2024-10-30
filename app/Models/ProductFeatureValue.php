@@ -10,4 +10,15 @@ class ProductFeatureValue extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function categoryFeature()
+    {
+        return $this->belongsTo(CategoryFeature::class);
+
+    }
+
+    public function categoryFeatureValue()
+    {
+        return $this->belongsTo(CategoryFeatureValue::class);
+
+    }
 }

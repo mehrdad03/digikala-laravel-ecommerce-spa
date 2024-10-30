@@ -8,3 +8,6 @@
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <!-- Main css -->
 <link rel="stylesheet" href="/client/css/main.css"/>
+
+
+@stack('style')

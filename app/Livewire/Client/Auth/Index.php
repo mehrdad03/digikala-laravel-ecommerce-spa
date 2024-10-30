@@ -9,6 +9,7 @@ use App\Repositories\admin\AdminCityRepositoryInterface;
 use App\Repositories\client\ClientAuthRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
@@ -104,6 +105,14 @@ class Index extends Component
         $repository->checkUser($gmailUser);
 
         return redirect()->route('client.home');
+
+    }
+
+    public function clientLogout()
+    {
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('client.auth.index');
 
     }
 

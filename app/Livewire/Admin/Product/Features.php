@@ -2,10 +2,12 @@
 
 namespace App\Livewire\Admin\Product;
 
+use App\Models\Category;
 use App\Models\CategoryFeature;
 use App\Models\Product;
 use App\Models\ProductFeatureValue;
 use App\Repositories\admin\AdminProductRepositoryInterface;
+use Elastic\Elasticsearch\Endpoints\Cat;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
@@ -26,8 +28,10 @@ class Features extends Component
     public function mount(Product $product)
     {
         $categoryId = $product->category_id;
+        $category= Category::query()->find($categoryId);
         $this->productId = $product->id;
-        $this->features = CategoryFeature::query()->where('category_id', $categoryId)->get();
+
+        $this->features = CategoryFeature::query()->where('category_id', $category->parent->id)->get();
 
     }
 
