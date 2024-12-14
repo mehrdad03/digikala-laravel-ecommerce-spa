@@ -1,0 +1,124 @@
+.btn-disabled {
+    opacity: 50%;
+}
+
+.cart-right {
+    width: 80%;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+}
+
+.cart-item {
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1.5rem 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item__title {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #23254e;
+}
+
+.cart-item__img {
+    width: 150px;
+    margin-left: 1.5rem;
+}
+
+.cart-item__info-item {
+    color: var(--text-color-500);
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    font-weight: 400;
+}
+
+.cart-item__info-item:first-child > span {
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.cart-counter {
+    padding: 0.875rem;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.cart-counter__number {
+    margin: 0 1rem;
+}
+
+.cart-item__footer-price {
+    place-self: center;
+    margin-right: 2rem;
+}
+
+.cart-item__footer-discounted-price {
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    display: block;
+}
+
+.cart-item__footer-new-price {
+    font-size: 1.5rem;
+}
+
+.cart-left {
+    width: 20%;
+    margin-right: 1rem;
+}
+
+.cart-invoice {
+    padding: 1rem;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 0.5rem;
+}
+
+.cart-invoice > div:first-child {
+    color: var(--text-color-500);
+}
+
+.cart-invoice > div:nth-child(2) {
+    color: #23254e
+}
+
+.cart-invoice > div:nth-child(3) {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+@media (max-width: 1199px) {
+    .cart-left, .cart-right {
+        width: 100%;
+    }
+
+    .cart-left {
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+
+    .cart-container {
+        flex-wrap: wrap;
+    }
+
+    .complete-order-mobile {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background: #fff;
+        box-shadow: 1px 1px 4px 0px #000;
+    }
+
+}

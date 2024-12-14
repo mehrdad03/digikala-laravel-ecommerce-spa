@@ -16,8 +16,10 @@ class ClientProductRepository implements ClientProductRepositoryInterface
         return Product::query()
             ->where('p_code', $p_code)
             ->select('id', 'name', 'price', 'discount', 'discount_duration', 'category_id', 'stock', 'seller_id', 'p_code', 'featured')
-            ->with('images', 'coverImage', 'seller')
-            ->firstOrFail();
+            ->with(['images', 'coverImage', 'seller', 'seo' => function ($query) {
+                $query->where('type', 'product');
+            }
+            ])->firstOrFail();
     }
 
     public function checkProductInCart($productId)
@@ -77,7 +79,7 @@ class ClientProductRepository implements ClientProductRepositoryInterface
         ]);
     }
 
-    public function setVote($status,$reviewId)
+    public function setVote($status, $reviewId)
     {
         ProductReviewVote::query()->updateOrCreate(
             [

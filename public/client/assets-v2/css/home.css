@@ -1,0 +1,183 @@
+/* story */
+
+.story__item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.story__item {
+  width: 85px !important;
+  border-radius: 50%;
+  background: red;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.story__item-title {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.story__item-img-container {
+  padding: 0.2rem;
+  border: 1px solid blue;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+}
+
+/* Incredible offers */
+
+.incredible-offers__container {
+  background: var(--primary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Incredible offers right */
+.incredible-offers__right {
+  margin: 0 1.5rem;
+}
+.incredible-offers__logo-container {
+  width: 88px;
+}
+
+.incredible-offers__all-link {
+  color: #fff;
+  font-size: 0.875rem;
+}
+/* Incredible offers left*/
+.incredible-offers__item-container {
+  width: 160px !important;
+  background: #fff;
+  padding: 0.5rem;
+}
+
+.incredible-offers__item-img-container {
+  text-align: -webkit-center;
+}
+.incredible-offers__item-img {
+  width: 132px;
+}
+.incredible-offers__item-title {
+  color: var(--text-color-500);
+  margin-bottom: 0.6rem;
+}
+.incredible-offers__item-discount {
+  background: var(--color-hint);
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+.incredible-offers__item-old-price {
+  display: block;
+  text-decoration: line-through;
+  color: var(--text-color-500);
+  font-size: 0.7rem;
+}
+
+/* banner */
+
+.banner__item {
+  padding: 10px;
+}
+.banner__item-img {
+  border-radius: 1.25rem;
+}
+
+/* Category icons */
+
+.category-icons__item-container {
+  width: 100px;
+}
+
+/* Popular brands */
+.popular-brands,
+.best-selling {
+  border: 1px solid var(--primary-border-color);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.popular-brands__item-container {
+  width: 100px;
+  display: block;
+}
+.popular-brands__item {
+  border-left: 1px solid var(--primary-border-color);
+  text-align: -webkit-center;
+  height: auto;
+  align-content: center;
+}
+/* Best selling slider */
+
+.best-selling__item-img-container {
+  width: 100px;
+}
+.best-selling__item-number {
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+  margin-left: 0.5rem;
+}
+.best-selling__item-title {
+  color: #3f4064;
+}
+
+.best-selling__item-left {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--primary-border-color);
+}
+
+.best-selling__item-container {
+  width: 320px !important;
+}
+/* Full banner */
+.full-banner__img {
+  border-radius: 1rem;
+}
+
+/* Blog post */
+.blog-post__headline-title {
+  font-size: 1.15rem;
+}
+.blog-post__headline-link {
+  color: var(--secondary-color);
+}
+.blog-post__item {
+  border: 1px solid var(--primary-border-color);
+  display: block;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.blog-post__item-title {
+  padding: 1rem;
+  color: var(--text-color-900);
+}
+
+@media (max-width: 1199px) {
+  .primary-slider__item-img-container {
+    text-align: -webkit-center;
+  }
+  .incredible-offers__container {
+    display: block !important;
+    border-radius: 0 !important;
+  }
+  .incredible-offers__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1rem !important;
+  }
+  .incredible-offers__logo-container {
+    width: 115px !important;
+  }
+  .incredible-offers__logo-2-container {
+    width: 30px;
+  }
+  .full-banner__container{
+    text-align: -webkit-center;
+  }
+}

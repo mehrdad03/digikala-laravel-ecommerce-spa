@@ -4,10 +4,13 @@ namespace App\Livewire\Client\Product;
 
 
 use App\Repositories\client\product\ClientProductRepositoryInterface;
+use Artesaos\SEOTools\Traits\SEOTools;
 use Livewire\Component;
 
 class Index extends Component
 {
+    use SEOTools;
+
     public $product;
 
     private $repository;
@@ -28,8 +31,19 @@ class Index extends Component
         }
 
         $this->product = $product;
+        $this->seoConfig($product->seo);
 
     }
+
+    public function seoConfig($productSeoItems)
+    {
+
+        $this->seo()
+            ->setTitle($productSeoItems->meta_title)
+            ->setDescription($productSeoItems->meta_description);
+
+    }
+
 
     public function render()
     {

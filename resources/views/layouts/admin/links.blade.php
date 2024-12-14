@@ -41,3 +41,4 @@
 <link rel="stylesheet" type="text/css" href="/admin/src/assets/css/light/forms/switches.css">
 <link rel="stylesheet" type="text/css" href="/admin/src/assets/css/dark/forms/switches.css">
 
+@stack('link')

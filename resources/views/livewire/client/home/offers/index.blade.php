@@ -51,7 +51,7 @@
             <div class="swiper mySwiper w-100" id="product">
                 <div class="swiper-wrapper">
                     @foreach($featuredProducts as $item)
-                        <a href="{{route('client.product',$item->p_code)}}/{{$item->seo->slug}}" class="swiper-slide">
+                        <a  href="{{route('client.product',$item->p_code)}}/{{$item->seo->slug}}" wire:navigate class="swiper-slide">
                             <div>
                                 <img
                                     src="/products/{{$item->id}}/medium/{{@$item->coverImage->path}}"

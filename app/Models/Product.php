@@ -30,7 +30,7 @@ class Product extends Model
 
     public function coverImage()
     {
-        return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
+        return $this->belongsTo(ProductImage::class, 'id', 'product_id');
 
     }
 
@@ -42,7 +42,7 @@ class Product extends Model
 
     public function seo()
     {
-        return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
+        return $this->belongsTo(SeoItem::class, 'id', 'ref_id')->where('type','=','product');
 
     }
 

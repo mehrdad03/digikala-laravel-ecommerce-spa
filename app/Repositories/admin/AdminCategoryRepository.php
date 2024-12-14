@@ -54,5 +54,4 @@ class AdminCategoryRepository implements AdminCategoryRepositoryInterface
         );
     }
 
-
 }

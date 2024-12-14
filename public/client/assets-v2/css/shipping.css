@@ -1,0 +1,233 @@
+
+.shipping-right {
+    width: 75%;
+}
+
+.shipping-top {
+    position: relative;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-border-color);
+    padding: 1rem;
+    justify-content: center;
+}
+
+.shipping-top .logo {
+    width: 200px;
+}
+
+
+.shipping-top > span {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+
+.shipping-address,
+.shipping-type {
+    padding: 1rem;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 0.5rem;
+}
+
+.add-new-address button {
+    color: var(--primary-color);
+    border: 1px solid;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.shipping-address__item,
+.shipping-type__item {
+    position: relative;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-border-color);
+    padding: 1rem;
+    margin-bottom: 0.875rem;
+    cursor: pointer;
+}
+
+.shipping-address__item.active,
+.shipping-type__item.active {
+    border: 2px solid var(--secondary-color);
+}
+
+.shipping-address__details > span:first-child {
+    color: var(--secondary-color);
+    margin-bottom: 0.875rem;
+}
+
+.address-edit__btn {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.875rem;
+    color: var(--secondary-color);
+}
+
+.shipping-type__price {
+    color: var(--secondary-color);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* استایل مدال */
+.addressModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.addressModal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--primary-border-color);
+    margin-bottom: .5rem;
+}
+
+.addressModal .modal-header {
+    border-bottom: 1px solid var(--primary-border-color);
+    margin-bottom: .5rem;
+}
+
+.addressModal .close-btn {
+    color: #aaa;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.addressModal .close-btn:hover,
+.addressModal .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.addressModal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addressModal .field-wrapper {
+    padding: .5rem;
+    margin-bottom: .5rem;
+}
+
+.addressModal form label {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.addressModal form input,
+.addressModal form select,
+.addressModal form textarea {
+
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-family: inherit;
+}
+
+.shipping-left {
+    width: 25%;
+    margin-right: 1rem;
+}
+
+.final-invoice {
+    border: 1px solid var(--primary-border-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--text-color-500);
+}
+
+.discount-code input {
+    text-align: center;
+    border: 1px solid var(--primary-border-color);
+    width: 100%;
+    margin-left: .5rem;
+    border-radius: .5rem;
+}
+
+.discount-code {
+    border-bottom: 1px solid var(--primary-border-color);
+    padding-bottom: .8rem;
+}
+
+.discount-code button {
+    padding: .5rem;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: .5rem;
+}
+
+.final-invoice div:nth-child(4) {
+    color: var(--primary-color);
+}
+
+.success-message {
+    color: var(--secondary-color);
+    display: block;
+    padding-top: .5rem;
+}
+
+.validation-error {
+    color: var(--primary-color);
+    display: block;
+    padding-top: .5rem;
+}
+
+.invalid-border {
+   border-color:var(--primary-color)!important;
+}
+
+input[name=mobile] {
+    direction: ltr;
+}
+
+@media (max-width: 1199px) {
+    .shipping-content {
+        flex-wrap: wrap;
+    }
+
+    .shipping-top {
+        justify-content: flex-end;
+    }
+
+    .shipping-left {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+
+    .shipping-right {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .shipping-top .logo {
+        width: 100px;
+    }
+
+
+}
