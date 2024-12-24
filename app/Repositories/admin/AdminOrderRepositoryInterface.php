@@ -6,6 +6,6 @@ interface AdminOrderRepositoryInterface
 {
     public function getOrderDetails($order);
     public function getStatusColor($status);
-    public function getOrdersWithFilters($search=null,$status=null);
+    public function getOrdersWithFilters($search=null,$status=null,$user=null);
 
 }

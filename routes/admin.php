@@ -20,9 +20,8 @@ use App\Livewire\Admin\Slider\Index as sliderIndex;
 use App\Livewire\Admin\Order\Index as orderIndex;
 use App\Livewire\Admin\Order\Details as orderDetails;
 use App\Livewire\Admin\Transaction\Index as transactionIndex;
-use Illuminate\Support\Facades\Auth;
+use App\Livewire\Admin\User\Index as userIndex;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 
 
 Route::name('admin.')->group(function () {
@@ -50,6 +49,7 @@ Route::name('admin.')->group(function () {
         Route::get('/order', orderIndex::class)->name('order.index');
         Route::get('/order/{order}', orderDetails::class)->name('order.details');
         Route::get('/transaction', transactionIndex::class)->name('transaction.index');
+        Route::get('/user', userIndex::class)->name('user.index');
 
         Route::post('/ck-upload/{productId}', [CkUpload::class, 'upload'])->name('ck-upload');
     });
